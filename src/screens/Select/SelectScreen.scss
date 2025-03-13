@@ -1,0 +1,115 @@
+.pg-sel-resume {
+  .sel-resume-wrap {
+    padding: 40px 0;
+
+    @media (max-width: 992px) {
+      padding: 32px 0;
+    }
+  }
+  .sel-resume-ttl {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @media (max-width: 992px) {
+      font-size: 28px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    @media(max-width: 576px){
+      font-size: 24px;
+    }
+  }
+  .sel-resume-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+  .sel-resume-opts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .resume-opt-item {
+      outline: 1px solid #838fa0;
+      border-radius: 10px;
+      transition: none;
+      padding: 60px 32px;
+      width: 50%;
+      max-width: 540px;
+
+      @media (max-width: 992px) {
+        padding: 40px 24px;
+      }
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+        width: 100%;
+        padding: 32px 20px;
+      }
+
+      @media (max-width: 576px) {
+        padding: 24px 16px;
+      }
+
+      @media(max-width: 480px){
+        padding: 20px 16px;
+      }
+
+      &:hover {
+        outline: 4px solid #0070d6;
+        background-color: var(--alice-blue);
+      }
+
+      &:focus {
+        outline: 3px dashed #0070d6;
+      }
+
+      .resume-opt-icon {
+        max-width: 72px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .resume-opt-ttl {
+        font-size: 24px;
+        margin-top: 24px;
+        margin-bottom: 12px;
+
+        @media (max-width: 992px) {
+          font-size: 20px;
+        }
+      }
+      .resume-opt-lead {
+        font-size: 18px;
+
+        @media (max-width: 992px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .sel-resume-btns {
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .btn {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      @media(max-width: 480px){
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+    }
+  }
+}

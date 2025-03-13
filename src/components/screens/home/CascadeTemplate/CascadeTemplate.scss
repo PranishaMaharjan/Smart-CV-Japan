@@ -1,0 +1,140 @@
+.cascade-template {
+  padding: 60px 0;
+  background-color: #fafafa;
+
+  @media (max-width: 992px) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: 576px) {
+    padding: 40px 0;
+  }
+
+  .cascade-template-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+
+    .cascade-template-ttl {
+      text-transform: capitalize;
+      color: var(--primary);
+      font-size: 40px;
+    }
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  .comments {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .comments-groups {
+    box-shadow: 8px 4px 10px 1px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    height: 295px;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .comment-groups-space {
+    display: grid;
+    grid-template-rows: 2;
+    row-gap: 20px;
+
+    .comment-description {
+      color: #616161;
+    }
+  }
+
+  .comment-profile {
+    display: flex;
+    gap: 20px;
+
+    img {
+      width: 70px;
+    }
+  }
+
+  .comment-profile-name {
+    display: grid;
+    grid-template-rows: 3;
+    width: 160px;
+
+    .comment-name {
+      font-weight: 700;
+    }
+
+    .comment-position {
+      font-size: 14px;
+      font-weight: 700;
+      color: #616161;
+    }
+  }
+
+  .comment-profile-icon {
+    height: auto;
+    width: 20px;
+    display: flex;
+    gap: 12px;
+    padding-top: 8px;
+  }
+
+  .cascade-template-img {
+    max-width: 450px;
+    padding: 16px;
+
+    @media (max-width: 992px) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  .cascade-template-content {
+    text-align: center;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+    @media (max-width: 992px) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  .cascade-template-ttl {
+    font-size: 32px;
+    margin-bottom: 16px;
+
+    @media (max-width: 992px) {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+  }
+  .cascade-template-lead {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .cascade-template-text {
+    font-size: 18px;
+  }
+  .separator-line {
+    margin: 40px 0;
+    height: 2px;
+    width: 80px;
+    background-color: var(--red);
+  }
+  .cascade-template-user {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .btn {
+    margin-top: 32px;
+  }
+}

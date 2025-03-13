@@ -1,0 +1,51 @@
+.resume-block-extra {
+  .form-elems-wrap {
+    position: relative;
+  }
+
+  .form-rating {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-right: 40px;
+
+    .rating-stars {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+
+  .form-elem {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    .form-ctrl-wrap {
+      width: 100%;
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+  }
+
+  .form-block-group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 60px;
+    row-gap: 24px;
+    margin-top: 32px;
+
+    .resume-row{
+        padding: 16px 0;
+    }
+  }
+
+  .form-block-lbl{
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

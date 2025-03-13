@@ -1,0 +1,146 @@
+.footer {
+  .footer-content {
+    background: var(--white);
+    color: var(--text);
+    border-bottom: 0.1rem solid rgba(35, 49, 67, 0.05);
+    font-size: 16px;
+  }
+
+  .last-container {
+    background-color: var(--primary);
+
+    .footer-bottom-text {
+      color: var(--white);
+    }
+  }
+
+  .footer-items {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    padding: 60px 0 24px 60px;
+    column-gap: 60px;
+    row-gap: 20px;
+
+    .footer-item .btn {
+      margin-top: 24px;
+      padding: 8px 10px;
+      background-color: var(--btncolor);
+    }
+
+    .footer-item .btn:hover {
+      background-color: var(--primary);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 40px 0 20px 0;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 100%;
+      text-align: center;
+    }
+  }
+
+  .footer-item-brand {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin-bottom: 20px;
+
+    @media (max-width: 576px) {
+      justify-content: center;
+    }
+
+    img {
+      max-width: 80px;
+    }
+    span {
+      font-weight: bold;
+      font-size: 24px;
+    }
+  }
+
+  .footer-item-lead {
+    font-size: 15px;
+    text-align: justify;
+
+    @media (max-width: 576px) {
+      max-width: 400px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  .footer-bottom-text {
+    padding: 8px 0;
+  }
+
+  .social-links {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: 576px) {
+      justify-content: center;
+    }
+  }
+
+  .contact-info {
+    margin-top: 12px;
+    font-size: 15px;
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @media (max-width: 576px) {
+        justify-content: center;
+      }
+    }
+
+    .info-item-lbl {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+  }
+
+  .footer-item-ttl {
+    font-weight: 600;
+    position: relative;
+    display: inline-flex;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      height: 2px;
+      background-color: #233143;
+      width: 100%;
+    }
+  }
+
+  .footer-links {
+    margin-top: 32px;
+    display: grid;
+    row-gap: 6px;
+
+    li {
+      font-size: 15px;
+
+      a {
+        &:hover {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+
+  .footer-bottom-text {
+    color: #676b78;
+    text-align: center;
+  }
+}

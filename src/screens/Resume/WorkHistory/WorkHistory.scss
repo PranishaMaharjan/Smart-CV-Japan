@@ -1,0 +1,24 @@
+.resume-block-workhistory {
+  .quill {
+    .ql-toolbar {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      border: 1px solid #838fa0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .ql-container {
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      border: 1px solid #838fa0;
+    }
+    .ql-editor {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .summary-item-ttl{
+    column-gap: 0;
+  }
+}

@@ -1,0 +1,85 @@
+.banner {
+  // height: 628px;
+  padding-left: 80px;
+  // margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // text-align: center;
+  min-height: 275px;
+  // line-height: 10px;
+
+  .container {
+    display: grid;
+    grid-template-columns: 600px 500px;
+
+    .banner-wrap {
+      padding-top: 130px;
+    }
+
+    .banner-japan-images {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .japan-image1 {
+      margin-top: 40px;
+      margin-left: 180px;
+    }
+
+    .japan-image2 {
+      margin-top: 280px;
+      margin-left: 30px;
+    }
+  }
+  .banner-ttl {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 64px;
+    width: 628px;
+    color: var(--primary);
+    height: 128px;
+
+    @media (max-width: 992px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 36px;
+      // line-height: 1.2;
+      margin-bottom: 16px;
+    }
+  }
+
+  .banner-lead {
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 20px;
+    width: 628px;
+    height: 60px;
+
+    @media (max-width: 992px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+
+  .btn {
+    margin-top: 50px;
+    font-size: 16px;
+    background-color: var(--btncolor);
+  }
+
+  .btn:hover {
+    background-color: var(--primary);
+  }
+}
+
+.japan-images {
+  width: 250px;
+  height: 250px;
+}

@@ -1,0 +1,78 @@
+.resume-sidebar {
+  background: var(--oxford-blue);
+  padding: 40px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  color: var(--white);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  img {
+    max-width: 36px;
+  }
+  span {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.sidebar-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+
+  .step-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-child {
+      .step-item-line {
+        display: none;
+      }
+    }
+  }
+
+  .step-item-count {
+    position: relative;
+    border: 2px solid #e5eaff;
+    color: var(--white);
+    font-weight: 700;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+
+    &.active {
+      background: #f2f8fd;
+      color: #07142b;
+    }
+  }
+
+  .step-item-line {
+    width: 2px;
+    background: #d5dae1;
+    height: 24px;
+  }
+
+  .step-item-text {
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    color: var(--white);
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+}
