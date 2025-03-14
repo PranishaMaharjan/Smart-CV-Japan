@@ -8,48 +8,87 @@ import {
   updateUploadedImage,
 } from "../../../redux/slices/resumeSlice";
 import { selectContactInfo } from "../../../redux/selectors/resumeSelectors";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactInfoValidationSchema from "../../../forms/ContactInfoValidationSchema";
 import FormField from "../../../components/common/FormField";
 import routeConstants from "../../../constants/routeConstants";
-
+import axios from "axios";
 const Contact = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const contactInfoData = useSelector(selectContactInfo);
+  const contactInfoData = useSelector(selectContactInfo) || {};
   const fileInputRef = useRef(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
+  // Memoized preview image to prevent re-renders
+  const imagePreview = useMemo(() => {
+    return selectedFile
+      ? URL.createObjectURL(selectedFile)
+      : contactInfoData?.uploadImage || Images.SampleImage;
+  }, [selectedFile, contactInfoData]);
+
+  // Save contact information
   const saveContactInfo = (values, { setSubmitting }) => {
     try {
-      const contactInfoData = values;
-      dispatch(updateContactInfo(contactInfoData));
+      dispatch(updateContactInfo(values));
       navigate("/resume/education/tips");
+      translateText("Pranisha");
     } catch (error) {
-      console.log(error);
+      console.error("Error saving contact info:", error);
     } finally {
       setSubmitting(false);
     }
   };
 
+  async function translateText(text) {
+    try {
+      const response = await axios.get(
+        "https://translate.googleapis.com/translate_a/single",
+        {
+          params: {
+            client: "gtx",
+            sl: "auto", // Auto-detect source language
+            tl: "ja", // Translate to Japanese
+            dt: "t",
+            q: text,
+          },
+        }
+      );
+
+      console.log("Translated Text:", response.data[0][0][0]); // Extracting translated text
+    } catch (error) {
+      console.error("Translation error:", error);
+    }
+  }
+
+  // Trigger file input
   const handleImageChange = () => {
     fileInputRef.current.click();
   };
 
+  // Handle file selection
   const handleFileInputChange = (event) => {
     event.preventDefault();
-    const selectedImage = event.target.files[0];
-    const preview = URL.createObjectURL(selectedImage);
-    setImagePreview(preview);
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    // Validate file type
+    const validImageTypes = ["image/jpeg", "image/png", "image/webp"];
+    if (!validImageTypes.includes(file.type)) {
+      alert("Please upload a valid image file (JPG, PNG, or WEBP).");
+      return;
+    }
+
+    setSelectedFile(file);
     const reader = new FileReader();
 
     reader.onload = () => {
-      const imageData = reader.result;
-      dispatch(updateUploadedImage(imageData));
+      dispatch(updateUploadedImage(reader.result));
     };
 
-    reader.readAsDataURL(selectedImage);
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -70,15 +109,10 @@ const Contact = () => {
                 We suggest including an email and phone number.
               </p>
               <div className="resume-row">
+                {/* Profile Image Upload */}
                 <div className="resume-img">
                   <div className="resume-img-preview">
-                    {imagePreview ? (
-                      <img src={imagePreview} alt="Uploaded" />
-                    ) : contactInfoData?.uploadImage ? (
-                      <img src={contactInfoData.uploadImage} alt="Uploaded" />
-                    ) : (
-                      <img src={Images.SampleImage} alt="Default" />
-                    )}
+                    <img src={imagePreview} alt="Profile Preview" />
                   </div>
                   <button
                     type="button"
@@ -92,9 +126,12 @@ const Contact = () => {
                     ref={fileInputRef}
                     name="image"
                     style={{ display: "none" }}
+                    accept="image/*"
                     onChange={handleFileInputChange}
                   />
                 </div>
+
+                {/* Form Fields */}
                 <div className="resume-form">
                   <p className="form-hint">*indicates a required field</p>
                   <div className="form-elems-wrap">
@@ -109,7 +146,7 @@ const Contact = () => {
                       <FormField
                         label="Surname*"
                         placeholder="e.g. Talley"
-                        name="surName"
+                        name="surname"
                         errors={errors}
                         touched={touched}
                       />
@@ -127,7 +164,7 @@ const Contact = () => {
                     <div className="form-elem-cols-2">
                       <FormField
                         label="City/Municipality*"
-                        placeholder="e.g. Talley"
+                        placeholder="e.g. Bangkok"
                         name="cityOrMunicipality"
                         errors={errors}
                         touched={touched}
@@ -167,9 +204,10 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-                <div className="resume-preview"></div>
               </div>
             </div>
+
+            {/* Buttons */}
             <div className="resume-block-bottom">
               <button
                 type="button"

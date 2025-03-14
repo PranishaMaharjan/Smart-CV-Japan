@@ -1,6 +1,7 @@
 const routeConstants = {
   ROOT: "/",
   HOME: "/",
+  // LOGIN: "/",
   HOW_IT_WORKS: "/how_it_works",
   SELECT: "/select",
   RESUME: "/resume",
@@ -19,6 +20,7 @@ const routeConstants = {
   RESUME_SUMMARY_ADD: "/resume/summary/add",
   RESUME_EXTRA_ADD: "/resume/extra/add",
   RESUME_PREVIEW: "/resume/preview",
+  RESUME_JAPAN: "/resume/japan",
   PAGE_NOT_FOUND: "/*",
 };
 

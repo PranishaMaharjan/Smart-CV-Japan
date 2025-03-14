@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Preview.scss";
 import { selectResume } from "../../../redux/selectors/resumeSelectors";
 import { Images } from "../../../assets/images";
+import flagJapan from "../../../assets/images/flagJapan.png";
 
 const Preview = () => {
   const resume = useSelector(selectResume);
@@ -14,6 +16,11 @@ const Preview = () => {
           Review and make any final changes to your resume. Then download or
           email yourself a copy and apply for jobs!
         </p>
+        <div className="translator-div">
+          <Link to="/resume/japan">
+            <img className="translator" src={flagJapan} alt="Japan Flag" />
+          </Link>
+        </div>
       </div>
 
       <div className="preview-main">

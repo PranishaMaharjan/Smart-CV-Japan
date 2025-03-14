@@ -1,8 +1,16 @@
+.translator-div {
+  display: flex;
+  justify-content: right;
+  margin-right: 50px;
+  .translator {
+    width: 50px;
+  }
+}
 .preview-main {
   display: grid;
-  grid-template-columns: 240px auto;
+  // grid-template-columns: 240px auto;
   min-height: 1200px;
-  margin: 40px 0;
+  margin: 60px;
 
   .preview-left {
     background: #003d73;
