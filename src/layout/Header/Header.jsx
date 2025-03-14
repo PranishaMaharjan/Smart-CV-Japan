@@ -26,8 +26,8 @@ const Header = () => {
                 <Link to="/about">Contact</Link>
               </li>
             </ul>
-            <Link to="/select" className="resume-btn">
-              My Resume
+            <Link to="/login" className="resume-btn">
+              Login
             </Link>
           </nav>
         </div>

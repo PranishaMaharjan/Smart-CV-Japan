@@ -1,7 +1,7 @@
 const routeConstants = {
   ROOT: "/",
   HOME: "/",
-  // LOGIN: "/",
+  // LOGIN: "/login",
   HOW_IT_WORKS: "/how_it_works",
   SELECT: "/select",
   RESUME: "/resume",

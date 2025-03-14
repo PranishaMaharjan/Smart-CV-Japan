@@ -22,7 +22,6 @@ import SummaryTips from "../screens/Resume/Summary/SummaryTips";
 import SummaryAdd from "../screens/Resume/Summary/SummaryAdd";
 import ExtraSectionsAdd from "../screens/Resume/ExtraSections/ExtraSectionsAdd";
 import Preview from "../screens/Resume/Preview/Preview";
-import CvTranslator from "../components/api/CvTranslator";
 
 const AppRoutes = () => {
   return (
@@ -88,8 +87,6 @@ const AppRoutes = () => {
         <Route path={routeConstants.RESUME_PREVIEW} element={<Preview />} />
       </Route>
 
-      <Route path={routeConstants.RESUME_JAPAN} element={<CvTranslator />} />
-      <Route />
       <Route path={routeConstants.PAGE_NOT_FOUND} element={<PageNotFound />} />
     </Routes>
   );
