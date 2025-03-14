@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import routeConstants from "../constants/routeConstants";
 import LayoutContainer from "../layout/LayoutContainer/LayoutContainer";
-// import Login from "../components/Login/Login";
 import Home from "../screens/Home/HomeScreen";
 import PageNotFound from "../screens/PageNotFound/PageNotFoundScreen";
 import HowItWorks from "../screens/HowItWorks/HowItWorksScreen";
@@ -22,13 +21,16 @@ import SummaryTips from "../screens/Resume/Summary/SummaryTips";
 import SummaryAdd from "../screens/Resume/Summary/SummaryAdd";
 import ExtraSectionsAdd from "../screens/Resume/ExtraSections/ExtraSectionsAdd";
 import Preview from "../screens/Resume/Preview/Preview";
+import Login from "../components/auth/Login/Login";
+import Register from "../components/auth/Register/Register";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path={routeConstants.ROOT} element={<LayoutContainer />}>
         <Route path={routeConstants.HOME} element={<Home />} />
-        {/* <Route path={routeConstants.LOGIN} element={<Login />} /> */}
+        <Route path={routeConstants.LOGIN} element={<Login />} />
+        <Route path={routeConstants.REGISTER} element={<Register />} />
         <Route path={routeConstants.HOW_IT_WORKS} element={<HowItWorks />} />
         <Route path={routeConstants.SELECT} element={<SelectScreen />} />
       </Route>
