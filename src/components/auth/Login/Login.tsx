@@ -1,12 +1,18 @@
-import { SignIn, SignInButton, SignUp, SignUpButton } from "@clerk/clerk-react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  SignIn,
+} from "@clerk/clerk-react";
 import React from "react";
 
 const Login: React.FC = () => {
   return (
     <div className="container">
-      <SignIn>
-        <SignInButton />
-      </SignIn>
+      <SignedOut>
+        <SignIn></SignIn>
+      </SignedOut>
     </div>
   );
 };
