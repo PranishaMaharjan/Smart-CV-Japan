@@ -146,7 +146,7 @@ const Contact = () => {
                       <FormField
                         label="Surname*"
                         placeholder="e.g. Talley"
-                        name="surname"
+                        name="surName"
                         errors={errors}
                         touched={touched}
                       />
