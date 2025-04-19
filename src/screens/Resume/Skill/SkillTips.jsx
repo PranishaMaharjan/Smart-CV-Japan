@@ -6,7 +6,7 @@ import "./Skill.scss";
 const SkillTips = () => {
   return (
     <div className="resume-board-block resume-block-skill">
-      <ResumeTop goBackRoute={routeConstants.RESUME_WORKHISTORY_LIST} />
+      <ResumeTop goBackRoute={routeConstants.RESUME_PERSONAL_DETAILS} />
       <div className="resume-block-content">
         <div className="tips-row">
           <div className="resume-tips-info">
@@ -22,20 +22,20 @@ const SkillTips = () => {
           </div>
         </div>
       </div>
-      <div className="resume-block-bottom">
-        <button
-          type="button"
+      {/* <div className="resume-block-bottom">
+        <Link
+          to="/resume/personaldetails/add"
           className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
         >
           <span className="btn-text">Preview</span>
-        </button>
+        </Link>
         <Link
-            to={routeConstants.RESUME_SKILL_ADD}
-            className="resume-next-btn btn btn-orange border-effect"
-          >
-            <span className="btn-text">Next</span>
-          </Link>
-      </div>
+          to={routeConstants.RESUME_SKILL_ADD}
+          className="resume-next-btn btn btn-orange border-effect"
+        >
+          <span className="btn-text">Next</span>
+        </Link>
+      </div> */}
     </div>
   );
 };

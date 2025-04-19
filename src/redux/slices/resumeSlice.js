@@ -38,8 +38,8 @@ export const resumeSlice = createSlice({
   initialState,
   reducers: {
     RESET_RESUME: () => {
-      removeFromLocalStorage();
-      return initialState;
+      // removeFromLocalStorage();
+      initialState;
     },
     updateContactInfo: (state, action) => {
       state.contactInfo = {
@@ -133,6 +133,6 @@ export const {
   updateWorkHistoryInfo,
   addOrUpdateSkillInfo,
   addOrUpdateSummaryInfo,
-  addOrUpdateExtraInfo
+  addOrUpdateExtraInfo,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;

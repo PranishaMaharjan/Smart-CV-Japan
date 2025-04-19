@@ -60,7 +60,6 @@ const SkillAdd = () => {
       {({ values }) => (
         <Form>
           <div className="resume-board-block resume-block-skill">
-            <ResumeTop goBackRoute={routeConstants.RESUME_SKILL_TIPS} />
             <div className="resume-block-content">
               <h2 className="resume-block-ttl">
                 What skills would you like to highlight?
@@ -149,20 +148,7 @@ const SkillAdd = () => {
                 )}
               </FieldArray>
             </div>
-            <div className="resume-block-bottom">
-              <button
-                type="button"
-                className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-              >
-                <span className="btn-text">Preview</span>
-              </button>
-              <button
-                type="submit"
-                className="resume-next-btn btn btn-orange border-effect"
-              >
-                <span className="btn-text">Next:Summary</span>
-              </button>
-            </div>
+            
           </div>
         </Form>
       )}

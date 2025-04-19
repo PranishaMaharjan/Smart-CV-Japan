@@ -32,7 +32,10 @@ const Contact = () => {
   const saveContactInfo = (values, { setSubmitting }) => {
     try {
       dispatch(updateContactInfo(values));
-      navigate("/resume/education/tips");
+      navigate("/resume/personaldetails/add");
+      // navigate("/resume/education/tips");
+      // navigate("/resumepage/personaldetails/add");
+      // navigate(routeConstants.RESUME_PERSONAL_DETAILS);
       translateText("Pranisha");
     } catch (error) {
       console.error("Error saving contact info:", error);
@@ -100,107 +103,120 @@ const Contact = () => {
       {({ errors, touched }) => (
         <Form>
           <div className="resume-board-block resume-block-contact">
-            <ResumeTop goBackRoute={routeConstants.SELECT} />
+            <ResumeTop goBackRoute={routeConstants.RESUME_SELECTCVTYPE} />
             <div className="resume-block-content">
-              <h2 className="resume-block-ttl">
-                What&apos;s the best way for employers to contact you?
-              </h2>
-              <p className="resume-block-lead">
-                We suggest including an email and phone number.
-              </p>
-              <div className="resume-row">
-                {/* Profile Image Upload */}
-                <div className="resume-img">
-                  <div className="resume-img-preview">
-                    <img src={imagePreview} alt="Profile Preview" />
-                  </div>
-                  <button
-                    type="button"
-                    onClick={handleImageChange}
-                    className="img-upload-btn border-effect"
-                  >
-                    Upload Photo
-                  </button>
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    name="image"
-                    style={{ display: "none" }}
-                    accept="image/*"
-                    onChange={handleFileInputChange}
-                  />
+              <div className="resume-block-ttl">
+                <h2 className="">Untitled Cv Draft</h2>
+                <img src="../../src/assets/icons/pencil-edit-02.png"></img>
+              </div>
+
+              <div className="resume-block-container">
+                <p className="resume-block-lead">Personal Details</p>
+                <hr />
+
+                <div className="resume-subttl">
+                  <p className="resume-subttl-text">
+                    <img src="../../src/assets/icons/information-square.png"></img>
+                    Enter details as per your Passport. All the fields are
+                    mandatory expect with tag (Optional). Incomplete or
+                    incorrect info may cause delays.
+                  </p>
                 </div>
 
-                {/* Form Fields */}
-                <div className="resume-form">
-                  <p className="form-hint">*indicates a required field</p>
-                  <div className="form-elems-wrap">
-                    <div className="form-elem-cols-2">
-                      <FormField
-                        label="First Name*"
-                        placeholder="e.g. Maria"
-                        name="firstName"
-                        errors={errors}
-                        touched={touched}
-                      />
-                      <FormField
-                        label="Surname*"
-                        placeholder="e.g. Talley"
-                        name="surName"
-                        errors={errors}
-                        touched={touched}
-                      />
+                <div className="resume-row">
+                  {/* Profile Image Upload */}
+                  <div className="resume-img">
+                    <div className="resume-img-preview">
+                      <img src={imagePreview} alt="Profile Preview" />
                     </div>
-                    <div className="form-elem-cols-1">
-                      <FormField
-                        label="Profession"
-                        isOptional={true}
-                        placeholder="e.g. Sr. Accountant"
-                        name="profession"
-                        errors={errors}
-                        touched={touched}
-                      />
-                    </div>
-                    <div className="form-elem-cols-2">
-                      <FormField
-                        label="City/Municipality*"
-                        placeholder="e.g. Bangkok"
-                        name="cityOrMunicipality"
-                        errors={errors}
-                        touched={touched}
-                      />
-                      <div className="form-elem-subcols-2">
+                    <button
+                      type="button"
+                      onClick={handleImageChange}
+                      className="img-upload-btn"
+                    >
+                      <p className="">Upload Image</p>
+                    </button>
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      name="image"
+                      style={{ display: "none" }}
+                      accept="image/*"
+                      onChange={handleFileInputChange}
+                    />
+                  </div>
+
+                  {/* Form Fields */}
+                  <div className="resume-form">
+                    <p className="form-hint">*indicates a required field</p>
+                    <div className="form-elems-wrap">
+                      <div className="form-elem-cols-2">
                         <FormField
-                          label="Country*"
-                          placeholder="e.g. Thailand"
-                          name="country"
+                          label="First Name*"
+                          placeholder="e.g. Maria"
+                          name="firstName"
                           errors={errors}
                           touched={touched}
                         />
                         <FormField
-                          label="Postal Code"
-                          placeholder="e.g. 6000"
-                          name="postalCode"
+                          label="Surname*"
+                          placeholder="e.g. Talley"
+                          name="surName"
                           errors={errors}
                           touched={touched}
                         />
                       </div>
-                    </div>
-                    <div className="form-elem-cols-2">
-                      <FormField
-                        label="Phone*"
-                        placeholder="e.g. +234873249545"
-                        name="phone"
-                        errors={errors}
-                        touched={touched}
-                      />
-                      <FormField
-                        label="Email*"
-                        placeholder="e.g. mdelacruz@gmail.com"
-                        name="email"
-                        errors={errors}
-                        touched={touched}
-                      />
+                      <div className="form-elem-cols-1">
+                        <FormField
+                          label="Profession"
+                          isOptional={true}
+                          placeholder="e.g. Sr. Accountant"
+                          name="profession"
+                          errors={errors}
+                          touched={touched}
+                        />
+                      </div>
+                      <div className="form-elem-cols-2">
+                        <FormField
+                          label="City/Municipality*"
+                          placeholder="e.g. Bangkok"
+                          name="cityOrMunicipality"
+                          errors={errors}
+                          touched={touched}
+                        />
+                        <div className="form-elem-subcols-2">
+                          <FormField
+                            label="Country*"
+                            placeholder="e.g. Thailand"
+                            name="country"
+                            errors={errors}
+                            touched={touched}
+                          />
+                          <FormField
+                            label="Postal Code"
+                            placeholder="e.g. 6000"
+                            name="postalCode"
+                            errors={errors}
+                            touched={touched}
+                          />
+                        </div>
+                      </div>
+                      <div className="form-elem-cols-2">
+                        <FormField
+                          label="Phone*"
+                          placeholder="e.g. +234873249545"
+                          name="phone"
+                          errors={errors}
+                          touched={touched}
+                        />
+                        <FormField
+                          label="Email*"
+                          placeholder="e.g. mdelacruz@gmail.com"
+                          name="email"
+                          errors={errors}
+                          touched={touched}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -208,7 +224,7 @@ const Contact = () => {
             </div>
 
             {/* Buttons */}
-            <div className="resume-block-bottom">
+            {/* <div className="resume-block-bottom">
               <button
                 type="button"
                 className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
@@ -221,7 +237,7 @@ const Contact = () => {
               >
                 <span className="btn-text">Next: Education</span>
               </button>
-            </div>
+            </div> */}
           </div>
         </Form>
       )}

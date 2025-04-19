@@ -35,7 +35,6 @@ const SummaryAdd = () => {
       {() => (
         <Form>
           <div className="resume-board-block resume-block-summary">
-            <ResumeTop goBackRoute={routeConstants.RESUME_SUMMARY_TIPS} />
             <div className="resume-block-content">
               <h2 className="resume-block-ttl">
                 Briefly tell us about your background
@@ -73,20 +72,6 @@ const SummaryAdd = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="resume-block-bottom">
-              <button
-                type="button"
-                className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-              >
-                <span className="btn-text">Preview</span>
-              </button>
-              <button
-                type="submit"
-                className="resume-next-btn btn btn-orange border-effect"
-              >
-                <span className="btn-text">Next: Extra Sections</span>
-              </button>
             </div>
           </div>
         </Form>

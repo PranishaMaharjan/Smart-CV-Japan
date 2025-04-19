@@ -15,11 +15,12 @@ const SelectScreen = () => {
 
   const handleResumeCreate = async () => {
     await dispatch(RESET_RESUME());
-    navigate(routeConstants.RESUME_CONTACT);
+    // navigate(routeConstants.RESUME_CONTACT);
+    navigate(routeConstants.RESUME_SELECTCVTYPE);
   };
 
   const handleResumeContinue = () => {
-    navigate(routeConstants.RESUME_CONTACT);
+    navigate(routeConstants.RESUME_SELECTCVTYPE);
   };
 
   return (

@@ -20,7 +20,6 @@ const EducationList = () => {
 
   return (
     <div className="resume-board-block resume-block-education">
-      <ResumeTop goBackRoute={"/resume/education/tips"} />
       <div className="resume-block-content">
         <div className="resume-summary">
           <h3 className="summary-list-ttl">Education Summary</h3>
@@ -76,12 +75,6 @@ const EducationList = () => {
         </div>
       </div>
       <div className="resume-block-bottom">
-        <button
-          type="button"
-          className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-        >
-          <span className="btn-text">Preview</span>
-        </button>
         <Link
           to="/resume/workhistory/tips"
           className="resume-next-btn btn btn-orange border-effect"

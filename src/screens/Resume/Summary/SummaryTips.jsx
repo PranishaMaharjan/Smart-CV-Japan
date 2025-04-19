@@ -8,7 +8,6 @@ const SummaryTips = () => {
   useResumeCompletionGuard();
   return (
     <div className="resume-board-block resume-block-summary">
-      <ResumeTop goBackRoute={routeConstants.RESUME_SKILL_ADD} />
       <div className="resume-block-content">
         <div className="tips-row">
           <div className="resume-tips-info">
@@ -28,20 +27,6 @@ const SummaryTips = () => {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="resume-block-bottom">
-        <button
-          type="button"
-          className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-        >
-          <span className="btn-text">Preview</span>
-        </button>
-        <Link
-          to={routeConstants.RESUME_SUMMARY_ADD}
-          className="resume-next-btn btn btn-orange border-effect"
-        >
-          <span className="btn-text">Next</span>
-        </Link>
       </div>
     </div>
   );

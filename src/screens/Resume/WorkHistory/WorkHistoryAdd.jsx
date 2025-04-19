@@ -39,7 +39,12 @@ const WorkHistoryAdd = () => {
   const addData = (values, { setSubmitting }) => {
     try {
       const id = uuidv4();
-      const workHistoryInfoData = { id, isCurrentlyWorking, description, ...values };
+      const workHistoryInfoData = {
+        id,
+        isCurrentlyWorking,
+        description,
+        ...values,
+      };
       dispatch(addWorkHistoryInfo(workHistoryInfoData));
       navigate("/resume/workhistory/list");
     } catch (error) {
@@ -88,7 +93,6 @@ const WorkHistoryAdd = () => {
       {({ errors, touched, setFieldValue }) => (
         <Form>
           <div className="resume-board-block resume-block-workhistory">
-            <ResumeTop goBackRoute={routeConstants.RESUME_WORKHISTORY_TIPS} />
             <div className="resume-block-content">
               <h2 className="resume-block-ttl">Review or edit this job</h2>
               <p className="resume-block-lead">
@@ -99,6 +103,14 @@ const WorkHistoryAdd = () => {
                 <div className="resume-form">
                   <p className="form-hint">*indicates a required field</p>
                   <div className="form-elems-wrap">
+                    <div className="resume-block-bottom">
+                      <button
+                        type="submit"
+                        className="resume-next-btn btn btn-orange border-effect"
+                      >
+                        <span className="btn-text">Next</span>
+                      </button>
+                    </div>
                     <div className="form-elem-cols-2">
                       <FormField
                         label="Job Title *"
@@ -265,26 +277,17 @@ const WorkHistoryAdd = () => {
                         <label htmlFor="" className="form-lbl">
                           Job Description:
                         </label>
-                        <ReactQuill theme="snow" value = {description} name="description" onChange={setDescription} />
+                        <ReactQuill
+                          theme="snow"
+                          value={description}
+                          name="description"
+                          onChange={setDescription}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="resume-block-bottom">
-              <button
-                type="button"
-                className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-              >
-                <span className="btn-text">Preview</span>
-              </button>
-              <button
-                type="submit"
-                className="resume-next-btn btn btn-orange border-effect"
-              >
-                <span className="btn-text">Next</span>
-              </button>
             </div>
           </div>
         </Form>

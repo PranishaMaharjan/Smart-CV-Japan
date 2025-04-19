@@ -19,46 +19,50 @@ const ResumeSidebar = () => {
         <div className="step-item">
           <div
             className={`step-item-count ${
-              location.pathname.startsWith("/resume/contact") ? "active" : ""
-            }`}
-          >
-            1 <p className="step-item-text">Heading</p>
-          </div>
-          <div className="step-item-line"></div>
-        </div>
-        <div className="step-item">
-          <div
-            className={`step-item-count ${
-              location.pathname.startsWith("/resume/education") ? "active" : ""
-            }`}
-          >
-            2 <p className="step-item-text">Education</p>
-          </div>
-          <div className="step-item-line"></div>
-        </div>
-        <div className="step-item">
-          <div
-            className={`step-item-count ${
-              location.pathname.startsWith("/resume/workhistory")
+              location.pathname.startsWith("/resume/selectcvtype")
                 ? "active"
                 : ""
             }`}
           >
-            3<p className="step-item-text">Work History</p>
+            01 <p className="step-item-text">Your CV Type</p>
           </div>
           <div className="step-item-line"></div>
         </div>
         <div className="step-item">
           <div
             className={`step-item-count ${
-              location.pathname.startsWith("/resume/skill") ? "active" : ""
+              location.pathname.startsWith("/resume/personaldetails/add")
+                ? "active"
+                : ""
             }`}
           >
-            4 <p className="step-item-text">Skills</p>
+            02 <p className="step-item-text">Personal Details</p>
           </div>
           <div className="step-item-line"></div>
         </div>
         <div className="step-item">
+          <div
+            className={`step-item-count ${
+              location.pathname.startsWith("/resume/certifications/add")
+                ? "active"
+                : ""
+            }`}
+          >
+            03<p className="step-item-text">Certifications</p>
+          </div>
+          <div className="step-item-line"></div>
+        </div>
+        <div className="step-item">
+          <div
+            className={`step-item-count ${
+              location.pathname.startsWith("/resume/preview") ? "active" : ""
+            }`}
+          >
+            04 <p className="step-item-text">Introduction Video</p>
+          </div>
+          <div className="step-item-line"></div>
+        </div>
+        {/* <div className="step-item">
           <div
             className={`step-item-count ${
               location.pathname.startsWith("/resume/summary") ? "active" : ""
@@ -67,8 +71,8 @@ const ResumeSidebar = () => {
             5<p className="step-item-text">Summary</p>
           </div>
           <div className="step-item-line"></div>
-        </div>
-        <div className="step-item">
+        </div> */}
+        {/* <div className="step-item">
           <div
             className={`step-item-count ${
               location.pathname.startsWith("/resume/extra") ? "active" : ""
@@ -77,7 +81,7 @@ const ResumeSidebar = () => {
             6<p className="step-item-text">Finalize</p>
           </div>
           <div className="step-item-line"></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 .resume-sidebar {
-  background: var(--oxford-blue);
+  background: var(--white);
   padding: 40px 30px;
   position: fixed;
   top: 0;
   left: 0;
   width: 240px;
   height: 100%;
-  color: var(--white);
+  color: var(--text);
 }
 
 .sidebar-brand {
@@ -42,8 +42,8 @@
 
   .step-item-count {
     position: relative;
-    border: 2px solid #e5eaff;
-    color: var(--white);
+    border: 1px solid var(--text);
+    color: var(--text);
     font-weight: 700;
     width: 30px;
     height: 30px;
@@ -53,14 +53,15 @@
     border-radius: 100%;
 
     &.active {
-      background: #f2f8fd;
-      color: #07142b;
+      background: var(--primary);
+      color: var(--white);
+      border: 1px solid var(--primary);
     }
   }
 
   .step-item-line {
     width: 2px;
-    background: #d5dae1;
+    background: var(--text);
     height: 24px;
   }
 
@@ -68,7 +69,7 @@
     position: absolute;
     left: calc(100% + 12px);
     top: 50%;
-    color: var(--white);
+    color: var(--text);
     transform: translateY(-50%);
     white-space: nowrap;
     font-size: 15px;
