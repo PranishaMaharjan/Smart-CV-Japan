@@ -11,7 +11,11 @@ const FormField = ({
   isOptional,
 }) => {
   return (
-    <div className={`form-elem ${(touched[name] && errors[name]) ? "has-error" : ""}`}>
+    <div
+      className={`form-elem ${
+        touched[name] && errors[name] ? "has-error" : ""
+      }`}
+    >
       <label htmlFor="" className="form-lbl">
         {label} {isOptional && <span className="form-opt">(optional)</span>}
       </label>

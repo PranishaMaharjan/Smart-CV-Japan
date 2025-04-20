@@ -34,7 +34,7 @@ const EducationAdd = () => {
       const id = uuidv4();
       const educationInfoData = { id, ...values };
       dispatch(addEducationInfo(educationInfoData));
-      navigate("/resume/education/list");
+      navigate("/resume/personaldetails/add");
     } catch (error) {
       console.log(error);
     } finally {
@@ -52,7 +52,6 @@ const EducationAdd = () => {
       {({ errors, touched }) => (
         <Form>
           <div className="resume-board-block resume-block-education">
-            <ResumeTop goBackRoute={routeConstants.RESUME_EDUCATION_TIPS} />
             <div className="resume-block-content">
               <h2 className="resume-block-ttl">Tell us about your education</h2>
               <p className="resume-block-lead">
@@ -64,6 +63,14 @@ const EducationAdd = () => {
                 <div className="resume-form">
                   <p className="form-hint">*indicates a required field</p>
                   <div className="form-elems-wrap">
+                    <div className="resume-block-bottom">
+                      <button
+                        type="submit"
+                        className="resume-next-btn btn btn-orange border-effect"
+                      >
+                        <span className="btn-text">Add Education</span>
+                      </button>
+                    </div>
                     <div className="form-elem-cols-2">
                       <FormField
                         label="School Name"
@@ -162,20 +169,6 @@ const EducationAdd = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="resume-block-bottom">
-              <button
-                type="button"
-                className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-              >
-                <span className="btn-text">Preview</span>
-              </button>
-              <button
-                type="submit"
-                className="resume-next-btn btn btn-orange border-effect"
-              >
-                <span className="btn-text">Next</span>
-              </button>
             </div>
           </div>
         </Form>

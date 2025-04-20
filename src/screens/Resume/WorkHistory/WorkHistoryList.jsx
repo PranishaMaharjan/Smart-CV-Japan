@@ -90,17 +90,17 @@ const WorkHistoryList = () => {
         </div>
       </div>
       <div className="resume-block-bottom">
-        <button
-          type="button"
+        <Link
+          to="/resume/selectcvtype/add"
           className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
         >
           <span className="btn-text">Preview</span>
-        </button>
+        </Link>
         <Link
-          to="/resume/skill/tips"
+          to="/resume/certifications/add"
           className="resume-next-btn btn btn-orange border-effect"
         >
-          <span className="btn-text">Next: Skills</span>
+          <span className="btn-text">Next</span>
         </Link>
       </div>
     </div>

@@ -16,6 +16,7 @@ import "./ExtraSections.scss";
 import { useEffect, useState } from "react";
 import { addOrUpdateExtraInfo } from "../../../redux/slices/resumeSlice";
 import useResumeCompletionGuard from "../../../hooks/useResumeCompletionGuard";
+import { Link } from "react-router-dom";
 
 const ExtraSectionsAdd = () => {
   useResumeCompletionGuard();
@@ -88,7 +89,6 @@ const ExtraSectionsAdd = () => {
       {({ values }) => (
         <Form>
           <div className="resume-board-block resume-block-extra">
-            <ResumeTop goBackRoute={routeConstants.RESUME_SUMMARY_ADD} />
             <div className="resume-block-content">
               <h2 className="resume-block-ttl">
                 Do you have anything else to add?
@@ -361,12 +361,15 @@ const ExtraSectionsAdd = () => {
               </div>
             </div>
             <div className="resume-block-bottom">
-              <button
-                type="button"
-                className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-              >
-                <span className="btn-text">Preview</span>
+              <button>
+                <Link
+                  to="/resume/personaldetails/add"
+                  className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
+                >
+                  <span className="btn-text">Preview</span>
+                </Link>
               </button>
+
               <button
                 type="submit"
                 className="resume-next-btn btn btn-orange border-effect"

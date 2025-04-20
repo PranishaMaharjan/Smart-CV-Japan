@@ -1,7 +1,16 @@
+// export default Header;
 import { Link } from "react-router-dom";
 import { Images } from "../../assets/images";
 import FAQ from "../../components/screens/home/FAQ/FAQ";
 import "./Header.scss";
+
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  SignIn,
+} from "@clerk/clerk-react";
 
 const Header = () => {
   return (
@@ -26,9 +35,15 @@ const Header = () => {
                 <Link to="/about">Contact</Link>
               </li>
             </ul>
-            <Link to="/login" className="resume-btn">
-              Login
-            </Link>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+
+            <SignedOut>
+              <Link to="/login" className="resume-btn">
+                Login
+              </Link>
+            </SignedOut>
           </nav>
         </div>
       </div>
