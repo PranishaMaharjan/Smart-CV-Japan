@@ -285,16 +285,10 @@ const WorkHistoryEdit = () => {
               </div>
             </div>
             <div className="resume-block-bottom">
-              <button
-                type="button"
-                className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
-              >
+              <button type="button" className="resume-preview-btn btn ">
                 <span className="btn-text">Preview</span>
               </button>
-              <button
-                type="submit"
-                className="resume-next-btn btn btn-orange border-effect"
-              >
+              <button type="submit" className="resume-next-btn btn ">
                 <span className="btn-text">Next</span>
               </button>
             </div>

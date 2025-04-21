@@ -20,10 +20,8 @@ const WorkHistoryList = () => {
 
   return (
     <div className="resume-board-block resume-block-workhistory">
-      <ResumeTop goBackRoute={"/resume/workhistory/tips"} />
       <div className="resume-block-content">
         <div className="resume-summary">
-          <h3 className="summary-list-ttl">Work history summary</h3>
           <div className="summary-list">
             {workHistoryInfoData?.map((workHistoryItem, index) => {
               return (
@@ -92,13 +90,13 @@ const WorkHistoryList = () => {
       <div className="resume-block-bottom">
         <Link
           to="/resume/selectcvtype/add"
-          className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
+          className="resume-preview-btn btn btn-back btn-outline border-effect"
         >
-          <span className="btn-text">Preview</span>
+          <span className="btn-text">Back</span>
         </Link>
         <Link
           to="/resume/certifications/add"
-          className="resume-next-btn btn btn-orange border-effect"
+          className="resume-next-btn btn btn-next border-effect"
         >
           <span className="btn-text">Next</span>
         </Link>

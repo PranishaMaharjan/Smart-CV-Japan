@@ -364,17 +364,17 @@ const ExtraSectionsAdd = () => {
               <button>
                 <Link
                   to="/resume/personaldetails/add"
-                  className="resume-preview-btn btn btn-oxford-blue btn-outline border-effect"
+                  className="resume-preview-btn btn btn-back btn-outline border-effect"
                 >
-                  <span className="btn-text">Preview</span>
+                  <span className="btn-text">Back</span>
                 </Link>
               </button>
 
               <button
                 type="submit"
-                className="resume-next-btn btn btn-orange border-effect"
+                className="resume-next-btn btn btn-next border-effect"
               >
-                <span className="btn-text">Next:Finalize</span>
+                <span className="btn-text">Next</span>
               </button>
             </div>
           </div>

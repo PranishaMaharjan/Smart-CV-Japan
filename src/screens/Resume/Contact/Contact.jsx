@@ -126,14 +126,34 @@ const Contact = () => {
                 <div className="resume-row">
                   {/* Profile Image Upload */}
                   <div className="resume-img">
-                    <div className="resume-img-preview">
-                      <img src={imagePreview} alt="Profile Preview" />
-                    </div>
                     <button
                       type="button"
                       onClick={handleImageChange}
                       className="img-upload-btn"
                     >
+                      <div className="resume-img-preview">
+                        <img src={imagePreview} alt="Profile Preview" />
+
+                        <input
+                          type="file"
+                          ref={fileInputRef}
+                          name="image"
+                          style={{ display: "none" }}
+                          accept="image/*"
+                          onChange={handleFileInputChange}
+                        />
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={handleImageChange}
+                      className="img-upload-btn"
+                    >
+                      <img
+                        className="upload-img-icon"
+                        src="../../src/assets/icons/image-add-02.png"
+                      ></img>
                       <p className="">Upload Image</p>
                     </button>
                     <input
