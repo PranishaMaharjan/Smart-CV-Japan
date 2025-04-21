@@ -1,13 +1,14 @@
-import SkillTips from "../Skill/SkillTips";
+// import SkillTips from "../Skill/SkillTips";
 import SkillAdd from "../Skill/SkillAdd";
 import SummaryTips from "../Summary/SummaryTips";
 import SummaryAdd from "../Summary/SummaryAdd";
 import ExtraSectionsAdd from "../ExtraSections/ExtraSectionsAdd";
+import PassportUpload from "../Skill/PassportUpload";
 
 const Certifications = () => {
   return (
     <div className="pg-certifications">
-      <SkillTips />
+      <PassportUpload />
       <SkillAdd />
       <SummaryTips />
       <SummaryAdd />

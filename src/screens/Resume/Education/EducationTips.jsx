@@ -36,14 +36,14 @@ const EducationTips = () => {
         {educationInfoData?.length > 0 ? (
           <Link
             to={routeConstants.RESUME_EDUCATION_LIST}
-            className="resume-next-btn btn btn-orange border-effect"
+            className="resume-next-btn btn border-effect"
           >
             <span className="btn-text">Next</span>
           </Link>
         ) : (
           <Link
             to={routeConstants.RESUME_EDUCATION_ADD}
-            className="resume-next-btn btn btn-orange border-effect"
+            className="resume-next-btn btn border-effect"
           >
             <span className="btn-text">Next</span>
           </Link>
