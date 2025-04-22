@@ -65,5 +65,13 @@
     border-radius: 6px;
     font-size: 24px;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    color: #333;
+  }
+
+  .active {
+    border: 2px solid #e90e0e;
   }
 }
