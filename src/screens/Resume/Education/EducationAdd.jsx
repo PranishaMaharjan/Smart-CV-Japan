@@ -11,6 +11,7 @@ import FormField from "../../../components/common/FormField";
 import useYearRange from "../../../hooks/useYearRange";
 import useResumeCompletionGuard from "../../../hooks/useResumeCompletionGuard";
 import routeConstants from "../../../constants/routeConstants";
+import { useEffect } from "react"; // already imported others above
 
 const EducationAdd = () => {
   useResumeCompletionGuard();
@@ -19,6 +20,10 @@ const EducationAdd = () => {
   const startOffset = 20;
   const endOffset = 10;
   const years = useYearRange(startOffset, endOffset);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const initialState = {
     schoolName: "",
@@ -44,10 +49,12 @@ const EducationAdd = () => {
 
   return (
     <Formik
+      key={Date.now()} // 👈 this forces remount
       initialValues={initialState}
       validationSchema={EducationInfoValidationSchema}
       onSubmit={saveEducationInfo}
       validateOnMount
+      enableReinitialize={true}
     >
       {({ errors, touched }) => (
         <Form>

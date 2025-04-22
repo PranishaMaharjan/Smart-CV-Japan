@@ -76,14 +76,14 @@ const EducationList = () => {
           </div>
         </div>
       </div>
-      <div className="resume-block-bottom">
+      {/* <div className="resume-block-bottom">
         <Link
           to="/resume/workhistory/tips"
           className="resume-next-btn btn  border-effect"
         >
-          <span className="btn-text">Next: Work history</span>
+          <span className="btn-text">Next</span>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,9 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
   loadFromLocalStorage,
   removeFromLocalStorage,
   saveToLocalStorage,
 } from "../../utils/helper";
+import axios from "axios";
 
 const storedResumeData = loadFromLocalStorage();
 
@@ -31,7 +32,28 @@ const initialState = storedResumeData
         portfolios: [],
         certifications: [],
       },
+      loading: false,
+      error: null,
+      success: false,
     };
+
+// Async thunk to submit contact info to the backend
+export const submitContactInfo = createAsyncThunk(
+  "resume/submitContactInfo",
+  async (contactInfo, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/contact-info",
+        contactInfo
+      );
+      return response.data; // Assuming the response contains the necessary data
+    } catch (error) {
+      return rejectWithValue(
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+);
 
 export const resumeSlice = createSlice({
   name: "resume",
@@ -117,6 +139,25 @@ export const resumeSlice = createSlice({
       state.extraInfo = action.payload;
       saveToLocalStorage(state);
     },
+  },
+
+  extraReducers: (builder) => {
+    builder
+      .addCase(submitContactInfo.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.success = false;
+      })
+      .addCase(submitContactInfo.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+      })
+      .addCase(submitContactInfo.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+        state.success = false;
+      });
   },
 });
 

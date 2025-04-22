@@ -145,7 +145,8 @@ const SelectCvType = () => {
                   <span className="btn-text">Back</span>
                 </button> */}
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={() => navigate("/resume/personaldetails/add")}
                   className="resume-next-btn btn btn-next border-effect"
                 >
                   <span className="btn-text">Next</span>

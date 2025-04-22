@@ -26,13 +26,73 @@ const Preview = () => {
       <div className="preview-main">
         <div className="preview-left">
           <div className="preview-intro">
-            <div className="preview-intro-img">
+            <table className="contact-table">
+              <tbody>
+                <tr>
+                  <td className="label">Furigana</td>
+                  <td>
+                    <span>{resume?.contactInfo?.firstName}</span>&nbsp;
+                    <span>{resume?.contactInfo?.surName}</span>
+                  </td>
+                  <td rowSpan="4" className="photo-cell">
+                    {/* <img src={uploadImage} alt="Profile" className="photo" /> */}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="label">Full Name</td>
+                  <td className="bold-text">
+                    <span>{resume?.contactInfo?.firstName}</span>&nbsp;
+                    <span>{resume?.contactInfo?.surName}</span>
+                  </td>
+                </tr>
+                {/* <tr>
+                  <td className="label">Date of Birth</td>
+                  <td className="dob-info">
+                    <span>{dobYear}</span> / <span>{dobMonth}</span> /{" "}
+                    <span>{dobDay}</span> ( {age} years old ) &nbsp;&nbsp;
+                    <span className="gender-label">Gender:</span> {gender}
+                  </td>
+                </tr> */}
+                <tr>
+                  <td className="label">Furigana</td>
+                  <td>
+                    <span className="list-item-val">
+                      {resume?.contactInfo?.cityOrMunicipality},{" "}
+                      {resume?.contactInfo?.country},{" "}
+                      {resume?.contactInfo?.postalCode}
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="label">Current Location</td>
+                  <td>
+                    <span className="list-item-val bold-text">
+                      {resume?.contactInfo?.cityOrMunicipality},{" "}
+                      {resume?.contactInfo?.country},{" "}
+                      {resume?.contactInfo?.postalCode}
+                    </span>
+                  </td>
+                  {/* <td></td> */}
+                </tr>
+              </tbody>
+            </table>
+
+            {/* <div className="preview-intro-img">
               <img src={Images.Avatar} alt="" />
             </div>
-            <h3 className="preview-intro-name">
-              <span>{resume?.contactInfo?.firstName}</span>
-              <span>{resume?.contactInfo?.surName}</span>
-            </h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <h3 className="preview-intro-name">
+                      <span>{resume?.contactInfo?.firstName}</span>
+                      <span>{resume?.contactInfo?.surName}</span>
+                    </h3>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
             <p className="preview-intro-prof">
               {resume?.contactInfo?.profession}
             </p>
@@ -64,7 +124,7 @@ const Preview = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="preview-block-item preview-block-links">
               <div className="preview-block-head">

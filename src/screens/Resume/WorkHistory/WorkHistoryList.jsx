@@ -8,11 +8,26 @@ import { FaPencilAlt } from "react-icons/fa";
 import { FaPlus, FaTrash } from "react-icons/fa6";
 import { removeWorkHistoryInfo } from "../../../redux/slices/resumeSlice";
 import useResumeCompletionGuard from "../../../hooks/useResumeCompletionGuard";
+import { selectContactInfo } from "../../../redux/selectors/resumeSelectors";
+import axios from "axios"; // or whatever you're using
+import { useNavigate } from "react-router-dom";
+import { submitContactInfo } from "../../../redux/slices/resumeSlice"; // import your action
 
 const WorkHistoryList = () => {
   useResumeCompletionGuard();
   const workHistoryInfoData = useSelector(selectWorkHistoryInfo);
   const dispatch = useDispatch();
+  const contactInfoData = useSelector(selectContactInfo);
+  const navigate = useNavigate();
+  const { contactInfo, loading, error, success } = useSelector(
+    (state) => state.resume
+  );
+
+  const handleSubmitAndNext = (e) => {
+    e.preventDefault(); // Prevent page reload / network call
+    dispatch(submitContactInfo(contactInfo));
+    navigate("/resume/certifications/add");
+  };
 
   const handleDelete = (id) => {
     dispatch(removeWorkHistoryInfo(id));
@@ -94,12 +109,24 @@ const WorkHistoryList = () => {
         >
           <span className="btn-text">Back</span>
         </Link>
-        <Link
-          to="/resume/certifications/add"
+        {/* <button
+          onClick={handleSubmitAndNext}
           className="resume-next-btn btn btn-next border-effect"
         >
           <span className="btn-text">Next</span>
-        </Link>
+        </button> */}
+
+        <button
+          disabled={loading}
+          onClick={handleSubmitAndNext}
+          className="resume-next-btn btn btn-next border-effect"
+        >
+          <span className="btn-text">
+            {loading ? "Submitting..." : "Submit"}
+          </span>
+        </button>
+        {/* {error && <p>{error}</p>} */}
+        {success && <p>Success!</p>}
       </div>
     </div>
   );
