@@ -59,7 +59,7 @@ const PassportUpload = () => {
         </div>
 
         <div className="resume-block-container">
-          <p className="resume-block-lead">Personal Details</p>
+          <p className="resume-block-lead">Passport Upload</p>
           <hr />
 
           <div className="resume-subttl">
@@ -71,6 +71,10 @@ const PassportUpload = () => {
               Upload your original passport. Only JPG, PDF or DOC files allowed.
               Max 5MB per file, 10 files max.
             </p>
+          </div>
+
+          <div className="resume-certifiation-ttl">
+            <p className="resume-certifiation-ttl-text">Passport</p>
           </div>
 
           <div {...getRootProps({ className: "dropzone" })}>

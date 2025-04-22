@@ -6,19 +6,24 @@
     width: 50px;
   }
 }
+
+.resume-board-block {
+  background-color: var(--secondary);
+}
+
 .preview-main {
   display: grid;
   // grid-template-columns: 240px auto;
   min-height: 1200px;
-  margin: 60px;
+  margin: 30px;
 
   .preview-left {
-    background: #003d73;
-    color: var(--white);
+    background: var(--cv);
+    color: var(--btntext);
   }
 
   .preview-intro {
-    padding: 16px;
+    padding: 40px;
   }
 
   .preview-intro-img {
@@ -44,7 +49,7 @@
     font-weight: 600;
   }
   .preview-block-head {
-    background: #00315c;
+    // background: #00315c;
     padding: 4px 16px;
     font-size: 18px;
     font-weight: 700;
@@ -78,4 +83,50 @@
       display: block;
     }
   }
+}
+
+// PersonalDetails-Contact
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.contact-table td {
+  border: 2px solid black;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.label {
+  width: 20%;
+  font-size: 15px;
+  font-weight: normal;
+  // background-color: #f9f9f9;
+}
+
+.bold-text {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dob-info {
+  font-size: 14px;
+}
+
+.gender-label {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.photo-cell {
+  width: 25%;
+  text-align: center;
+  vertical-align: top;
+}
+
+.photo {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
