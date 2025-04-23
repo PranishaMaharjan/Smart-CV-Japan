@@ -199,6 +199,11 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 24px;
   }
+  .form-elem-cols-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+  }
 
   .form-elem-subcols-2 {
     display: grid;
