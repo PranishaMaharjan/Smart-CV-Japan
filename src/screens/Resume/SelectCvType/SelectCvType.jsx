@@ -23,6 +23,11 @@ const SelectCvType = () => {
   const fileInputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
 
+  //to highlight the selected cv type yo chai
+  const [selectedCvType, setSelectedCvType] = useState(
+    contactInfoData?.cvType || ""
+  );
+
   // Memoized preview image to prevent re-renders
   const imagePreview = useMemo(() => {
     return selectedFile
@@ -33,6 +38,10 @@ const SelectCvType = () => {
   // Save contact information
   const saveContactInfo = (values, { setSubmitting }) => {
     try {
+      const updatedValues = {
+        ...values,
+        cvType: selectedCvType,
+      };
       dispatch(updateContactInfo(values));
       navigate("/resume/personaldetails/add");
       // navigate("/resume/education/tips");
@@ -124,13 +133,40 @@ const SelectCvType = () => {
                 </div>
 
                 <div className="resume-type-select">
-                  <div className="resume-type-ssw">
+                  {/* <div className="resume-type-ssw">
+                   */}
+
+                  {/* yo chai selected group highlight garna ko lagi */}
+                  <div
+                    className={`resume-type-ssw ${
+                      selectedCvType === "SSW" ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedCvType("SSW")}
+                  >
                     <p>SSW</p>
                   </div>
-                  <div className="resume-type-titp">
+
+                  {/* <div className="resume-type-titp"> */}
+                  <div
+                    className={`resume-type-titp ${
+                      selectedCvType === "TITP" ? "active" : ""
+                    }`}
+                    onClick={() => setSelectedCvType("TITP")}
+                  >
                     <p>TITP</p>
                   </div>
-                  <div className="resume-type-visas">
+
+                  {/* <div className="resume-type-visas"> */}
+                  <div
+                    className={`resume-type-visas ${
+                      selectedCvType === "University Graduate Visas"
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setSelectedCvType("University Graduate Visas")
+                    }
+                  >
                     <p>University Graduate Visas</p>
                   </div>
                 </div>
