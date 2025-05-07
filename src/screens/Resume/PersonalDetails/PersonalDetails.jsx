@@ -8,6 +8,7 @@ import WorkHistoryTips from "../WorkHistory/WorkHistoryTips";
 import WorkHistoryList from "../WorkHistory/WorkHistoryList";
 import WorkHistoryAdd from "../WorkHistory/WorkHistoryAdd";
 import WorkHistoryEdit from "../../Resume/WorkHistory/WorkHistoryEdit";
+import SummaryAdd from "../../Resume/Summary/SummaryAdd";
 
 const PersonalDetails = () => {
   return (
@@ -21,7 +22,7 @@ const PersonalDetails = () => {
       {/* <WorkHistoryTips /> */}
       <WorkHistoryAdd />
       <WorkHistoryList />
-      {/* <WorkHistoryEdit /> */}
+      <SummaryAdd />
     </div>
   );
 };

@@ -86,27 +86,65 @@
 }
 
 // PersonalDetails-Contact
-.contact-table {
+.contact-table,
+.education-table,
+.workhistory-table,
+.summary-table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
+  margin-bottom: 40px;
 }
 
-.contact-table td {
+.education-table {
+  margin-bottom: 0px;
+}
+
+.contact-table td,
+.education-table td,
+.education-table th,
+.workhistory-table td,
+.workhistory-table th,
+.summary-table td,
+.summary-table th {
   border: 2px solid black;
   padding: 8px;
   vertical-align: middle;
+  box-shadow: 1px 1px 2px black;
+}
+
+.education-table,
+.workhistory-table {
+  .first-row {
+    border: 3px solid black;
+    box-shadow: 1px 1px 2px rgb(8, 8, 8);
+  }
+}
+
+.education-table td,
+.workhistory-table td {
+  font-weight: 550;
+}
+
+.education-table,
+.workhistory-table {
+  .year-label,
+  .moon-label,
+  .edu-label {
+    font-weight: 400;
+    text-align: center;
+  }
 }
 
 .label {
   width: 20%;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
   // background-color: #f9f9f9;
 }
 
 .bold-text {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -129,4 +167,15 @@
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.education-table,
+.workhistory-table {
+  .year-label {
+    width: 16%;
+  }
+
+  .moon-label {
+    width: 10%;
+  }
 }

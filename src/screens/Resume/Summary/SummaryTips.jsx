@@ -11,9 +11,6 @@ const SummaryTips = () => {
       <div className="resume-block-content">
         <div className="tips-row">
           <div className="resume-tips-info">
-            <h3 className="tips-info-subttl">
-              Finally, let&apos;s work on your
-            </h3>
             <h2 className="tips-info-ttl">Summary</h2>
             <p className="tips-list-head">Here&apos;s what you need to know:</p>
             <ul className="tips-list">
