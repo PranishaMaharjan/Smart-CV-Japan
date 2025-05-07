@@ -9,6 +9,7 @@ const FormField = ({
   errors,
   touched,
   isOptional,
+  children,
 }) => {
   return (
     <div
@@ -20,12 +21,24 @@ const FormField = ({
         {label} {isOptional && <span className="form-opt">(optional)</span>}
       </label>
       <div className="form-ctrl-wrap">
-        <Field
+        {/* yo purano */}
+        {/* <Field
           type="text"
           className="form-ctrl"
           placeholder={placeholder}
           name={name}
-        />
+        /> */}
+        {/* new rakheko */}
+        {children ? (
+          children
+        ) : (
+          <Field
+            type="text"
+            className="form-ctrl"
+            placeholder={placeholder}
+            name={name}
+          />
+        )}
         {touched[name] && (
           <span className="form-symbol">
             {errors[name] ? (
@@ -56,4 +69,5 @@ FormField.propTypes = {
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
   isOptional: PropTypes.bool,
+  children: PropTypes.string.isRequired,
 };

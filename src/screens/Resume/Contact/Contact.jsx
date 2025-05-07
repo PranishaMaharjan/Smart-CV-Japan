@@ -1,7 +1,7 @@
 import "./Contact.scss";
 import { Images } from "../../../assets/images";
 import ResumeTop from "../../../components/screens/resume/ResumeTop/ResumeTop";
-import { Form, Formik } from "formik";
+import { Form, Formik, Field } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateContactInfo,
@@ -56,7 +56,7 @@ const Contact = () => {
 
   return (
     <Formik
-      initialValues={contactInfoData}
+      initialValues={{ contactInfoData, tattoo: "yes" }}
       validationSchema={ContactInfoValidationSchema}
       onSubmit={() => {}}
     >
@@ -186,6 +186,81 @@ const Contact = () => {
                             errors={errors}
                             touched={touched}
                           />
+                        </div>
+                        {/* New */}
+                        <div className="form-elem-cols-3">
+                          <FormField
+                            label="Date of Birth"
+                            placeholder="08/09/2002"
+                            name="dob"
+                            errors={errors}
+                            touched={touched}
+                          >
+                            <Field type="date" name="dob" />
+                          </FormField>
+                          <FormField
+                            label="Nationality"
+                            placeholder="Nepalese"
+                            name="nationality"
+                            errors={errors}
+                            touched={touched}
+                          />
+                          <FormField
+                            label="Gender"
+                            placeholder="Male"
+                            name="gender"
+                            errors={errors}
+                            touched={touched}
+                          />
+                        </div>
+                        <div className="form-elem-cols-3">
+                          <FormField
+                            label="Height (cm)"
+                            placeholder="5'7"
+                            name="height"
+                            errors={errors}
+                            touched={touched}
+                          />
+                          <FormField
+                            label="Weight (kg)"
+                            placeholder="60"
+                            name="weight"
+                            errors={errors}
+                            touched={touched}
+                          />
+                          <FormField
+                            label="Blood Group"
+                            placeholder="O-"
+                            name="bloodGroup"
+                            errors={errors}
+                            touched={touched}
+                          />
+                        </div>
+                        <div className="form-elem-cols-2">
+                          <FormField
+                            label="Are You Married?"
+                            placeholder="Unmarried"
+                            name="martialStatus"
+                            errors={errors}
+                            touched={touched}
+                          />
+                          <FormField
+                            label="Do you have any Tattoo?"
+                            name="tattoo"
+                            errors={errors}
+                            touched={touched}
+                          >
+                            <div>
+                              <label className="flex items-center gap-1">
+                                <Field type="radio" name="tattoo" value="yes" />
+                                Yes
+                              </label>
+                              <label className="flex items-center gap-1">
+                                <Field type="radio" name="tattoo" value="no" />
+                                No
+                              </label>
+                            </div>
+                          </FormField>
                         </div>
                       </div>
                     </div>

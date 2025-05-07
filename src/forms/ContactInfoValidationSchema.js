@@ -27,6 +27,12 @@ const ContactInfoValidationSchema = Yup.object().shape({
     .trim()
     .matches(/^[0-9]+$/, "Postal code must contain only numbers")
     .max(200),
+  dob: Yup.string().required("Date of Birth is required"),
+  nationality: Yup.string().trim().required("Nationality is required").max(200),
+  gender: Yup.string().required("Gender is required"),
+  height: Yup.string().required("Height is required"),
+  weight: Yup.string().required("Weight is required"),
+  bloodGroup: Yup.string().required("Blood Group is required"),
 });
 
 export default ContactInfoValidationSchema;
