@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./Preview.scss";
@@ -73,6 +74,113 @@ const Preview = () => {
                     </span>
                   </td>
                   {/* <td></td> */}
+                </tr>
+              </tbody>
+            </table>
+
+            <table className="education-table">
+              <tbody>
+                <tr className="first-row">
+                  <td className="year-label">Year</td>
+                  <td className="moon-label">moon</td>
+                  <td className="edu-label">Educational Background</td>
+                  {/* <td>
+                        <span>{education.degree}</span>
+                      </td> */}
+                </tr>
+                {resume?.educationInfo?.map((education, index) => (
+                  <React.Fragment key={education.id || index}>
+                    <tr>
+                      <td>
+                        <span>{education.graduationYear}</span>
+                      </td>
+                      <td>
+                        <span>{education.graduationMonth}</span>
+                      </td>
+                      <td>
+                        <span>{education.schoolName}</span>
+                      </td>
+                    </tr>
+                    <tr></tr>
+                    {/* <tr>
+                      <td className="label">Location</td>
+                      <td>
+                        <span>{education.location}</span>
+                      </td>
+                    </tr> */}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+
+            <table className="workhistory-table">
+              <tbody>
+                <tr className="first-row">
+                  <td className="year-label">Year</td>
+                  <td className="moon-label">moon</td>
+                  <td className="edu-label">Work history</td>
+                  {/* <td>
+                        <span>{education.degree}</span>
+                      </td> */}
+                </tr>
+                {resume?.workhistoryInfo?.map((workHistory, index) => (
+                  <React.Fragment key={workHistory.id || index}>
+                    <tr>
+                      <td>
+                        <span>{workHistory.endDateYear}</span>
+                      </td>
+                      <td>
+                        <span>{workHistory.endDateMonth}</span>
+                      </td>
+                      <td>
+                        <span>{workHistory.jobTitle}</span>
+                      </td>
+                    </tr>
+                    <tr></tr>
+                    {/* <tr>
+                      <td className="label">Location</td>
+                      <td>
+                        <span>{education.location}</span>
+                      </td>
+                    </tr> */}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+
+            <table className="summary-table">
+              <tbody>
+                <tr className="first-row">
+                  <th className="detail-label">
+                    Special skills, Self-promotion, Motivation for applying
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: resume?.summaryInfo?.reason,
+                      }}
+                    />
+
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: resume?.summaryInfo?.selfPromotion,
+                      }}
+                    />
+
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: resume?.summaryInfo?.requests,
+                      }}
+                    />
+
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: resume?.summaryInfo?.vision,
+                      }}
+                    />
+                  </td>
                 </tr>
               </tbody>
             </table>

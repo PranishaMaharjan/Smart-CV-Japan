@@ -1,9 +1,18 @@
-.resume-block-summary{
-    .resume-row{
-        .form-elem{
-            .form-lbl{
-                margin-bottom: 12px;
-            }
-        }
+.resume-block-summary {
+  .resume-row {
+    padding-bottom: 0px;
+    .form-elem {
+      .form-lbl {
+        margin-bottom: 0px;
+        margin-top: 16px;
+      }
     }
+  }
+  .tox-editor-header {
+    height: 30px;
+  }
+  .tox-statusbar {
+    display: none !important;
+    font-size: 16px !important;
+  }
 }
