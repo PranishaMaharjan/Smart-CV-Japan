@@ -20,6 +20,7 @@
     "date-fns": "^4.1.0",
     "firebase": "^11.4.0",
     "formik": "^2.4.5",
+    "html2pdf.js": "^0.10.3",
     "prop-types": "^15.8.1",
     "quill": "^2.0.3",
     "react": "^18.3.1",

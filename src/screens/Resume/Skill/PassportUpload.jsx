@@ -55,6 +55,8 @@ const PassportUpload = () => {
       <div className="dashboard">
         <ResumeTop goBackRoute={routeConstants.RESUME_SELECTCVTYPE} />
       </div>
+      <hr />
+
       <div className="resume-board-block resume-block-skill">
         {/* <ResumeTop goBackRoute={routeConstants.RESUME_PERSONAL_DETAILS} /> */}
         <div className="resume-block-content">

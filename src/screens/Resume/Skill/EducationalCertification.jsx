@@ -14,16 +14,20 @@ import { useDropzone } from "react-dropzone";
 import ResumeTop from "../../../components/screens/resume/ResumeTop/ResumeTop";
 import routeConstants from "../../../constants/routeConstants";
 import "./PassportUpload.scss";
+import { useDispatch } from "react-redux";
+import { addOrUpdateEducationFiles } from "../../../redux/slices/resumeSlice";
 
 const EducationalCertification = () => {
-  const [passportFiles, setPassportFiles] = useState([]);
+  const dispatch = useDispatch();
+  const [educationFiles, setEducationFiles] = useState([]);
 
   const maxFiles = 10;
   const maxSize = 5 * 1024 * 1024; // 5MB
 
   const onDrop = (acceptedFiles, fileRejections) => {
-    const newFiles = [...passportFiles, ...acceptedFiles].slice(0, maxFiles);
-    setPassportFiles(newFiles);
+    const newFiles = [...educationFiles, ...acceptedFiles].slice(0, maxFiles);
+    setEducationFiles(newFiles);
+    dispatch(addOrUpdateEducationFiles(newFiles));
 
     if (fileRejections.length > 0) {
       fileRejections.forEach(({ file, errors }) => {
@@ -51,7 +55,7 @@ const EducationalCertification = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Passport files:", passportFiles);
+    console.log("Passport files:", educationFiles);
     // You can send files to backend here using FormData
   };
 
@@ -134,9 +138,9 @@ const EducationalCertification = () => {
             <p>Size limit: 5MB per file, can upload up to 10 files</p>
           </div>
 
-          {passportFiles.length > 0 && (
+          {educationFiles.length > 0 && (
             <ul className="file-list">
-              {passportFiles.map((file, idx) => (
+              {educationFiles.map((file, idx) => (
                 <li key={idx}>
                   {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
                 </li>

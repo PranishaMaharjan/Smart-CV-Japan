@@ -1,4 +1,68 @@
 .resume-sidebar {
+  width: 240px;
+  background-color: #ffffff;
+  height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+
+  .sidebar-logo {
+    padding: 0 24px;
+    margin-bottom: 40px;
+
+    img {
+      width: 100%;
+      max-height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  .sidebar-menu {
+    padding: 0 16px;
+
+    .menu-title {
+      font-size: 12px;
+      color: #9e9e9e;
+      margin-bottom: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s;
+
+      .menu-icon {
+        font-size: 18px;
+      }
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+
+      &.active {
+        background-color: #c20000;
+        color: #fff;
+
+        .menu-icon {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.resume-sidebar {
   background: var(--white);
   padding: 40px 30px;
   position: fixed;
@@ -91,7 +155,6 @@
   img {
     min-width: 40px;
     height: auto;
-    margin-left: 60px;
 
     @media (max-width: 992px) {
       max-width: 36px;

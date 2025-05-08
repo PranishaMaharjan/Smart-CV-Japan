@@ -10,9 +10,11 @@ import {
   SignInButton,
   UserButton,
   SignIn,
+  useUser,
 } from "@clerk/clerk-react";
 
 const Header = () => {
+  const { user } = useUser();
   return (
     <header className="pg-header">
       <div className="container">
@@ -36,7 +38,13 @@ const Header = () => {
               </li>
             </ul>
             <SignedIn>
-              <UserButton />
+              <div
+                className="user-info"
+                style={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
+                <span>{user?.fullName}</span>
+                <UserButton />
+              </div>
             </SignedIn>
 
             <SignedOut>

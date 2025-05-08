@@ -32,20 +32,26 @@
     left: 0;
   }
 
-  .form-block-group{
+  .form-block-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 60px;
     row-gap: 24px;
     margin-top: 32px;
 
-    .resume-row{
-        padding: 16px 0;
+    .resume-row {
+      padding: 16px 0;
     }
   }
 
-  .form-block-lbl{
+  .form-block-lbl {
     font-size: 24px;
     font-weight: 700;
   }
+}
+
+.resume-block-bottom {
+  // margin-top: 0px;
+  padding-top: 0;
+  background-color: var(--formbox);
 }

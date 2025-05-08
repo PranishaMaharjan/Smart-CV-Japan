@@ -30,7 +30,7 @@ const JFTN4Pass = () => {
     // const newFiles = [...passportFiles, ...acceptedFiles].slice(0, maxFiles);
     const newFiles = [...jftn4Files, ...acceptedFiles].slice(0, maxFiles);
     setJftn4Files(newFiles);
-    // dispatch(addOrUpdateJFTN4Files(newFiles));
+    dispatch(addOrUpdateJFTN4Files(newFiles));
 
     if (fileRejections.length > 0) {
       fileRejections.forEach(({ file, errors }) => {

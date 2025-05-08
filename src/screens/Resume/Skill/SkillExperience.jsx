@@ -13,17 +13,21 @@ import { useRef, useState, useMemo } from "react";
 import { useDropzone } from "react-dropzone";
 import ResumeTop from "../../../components/screens/resume/ResumeTop/ResumeTop";
 import routeConstants from "../../../constants/routeConstants";
+import { useDispatch } from "react-redux";
+import { addOrUpdateSkillFiles } from "../../../redux/slices/resumeSlice";
 import "./PassportUpload.scss";
 
 const SkillExperience = () => {
-  const [passportFiles, setPassportFiles] = useState([]);
+  const dispatch = useDispatch();
+  const [skillFiles, setSkillFiles] = useState([]);
 
   const maxFiles = 10;
   const maxSize = 5 * 1024 * 1024; // 5MB
 
   const onDrop = (acceptedFiles, fileRejections) => {
-    const newFiles = [...passportFiles, ...acceptedFiles].slice(0, maxFiles);
-    setPassportFiles(newFiles);
+    const newFiles = [...skillFiles, ...acceptedFiles].slice(0, maxFiles);
+    setSkillFiles(newFiles);
+    dispatch(addOrUpdateSkillFiles(newFiles));
 
     if (fileRejections.length > 0) {
       fileRejections.forEach(({ file, errors }) => {
@@ -51,7 +55,7 @@ const SkillExperience = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Passport files:", passportFiles);
+    console.log("Passport files:", skillFiles);
     // You can send files to backend here using FormData
   };
 
@@ -132,9 +136,9 @@ const SkillExperience = () => {
             <p>Size limit: 5MB per file, can upload up to 10 files</p>
           </div>
 
-          {passportFiles.length > 0 && (
+          {skillFiles.length > 0 && (
             <ul className="file-list">
-              {passportFiles.map((file, idx) => (
+              {skillFiles.map((file, idx) => (
                 <li key={idx}>
                   {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
                 </li>

@@ -128,7 +128,7 @@ const WorkHistoryList = () => {
           </div>
         </div>
       </div>
-      <div className="resume-block-bottom">
+      {/* <div className="resume-block-bottom">
         <Link
           to="/resume/selectcvtype/add"
           className="resume-preview-btn btn btn-back btn-outline border-effect"
@@ -146,7 +146,7 @@ const WorkHistoryList = () => {
         </button>
         {error && <p>{error}</p>}
         {success && <p>Success!</p>}
-      </div>
+      </div> */}
     </div>
   );
 };
