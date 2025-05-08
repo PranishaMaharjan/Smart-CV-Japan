@@ -5,13 +5,28 @@ import "./Preview.scss";
 import { selectResume } from "../../../redux/selectors/resumeSelectors";
 import { Images } from "../../../assets/images";
 import flagJapan from "../../../assets/images/flagJapan.png";
+import { useState } from "react";
+import { useDropzone } from "react-dropzone";
+import routeConstants from "../../../constants/routeConstants";
+import { useNavigate } from "react-router-dom";
 
 const Preview = () => {
   const resume = useSelector(selectResume);
   console.log(resume);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Uploaded video file:", passportFiles);
+    navigate(routeConstants.RESUME_CVTEMPLATE);
+
+    // Handle video upload to backend here using FormData if needed
+  };
   return (
     <div className="resume-board-block resume-block-preview">
       <div className="resume-block-content">
+        <button onClick={handleSubmit} className="btn btn-orange">
+          Submit
+        </button>
         <h2 className="resume-block-ttl">Review your resume</h2>
         <p className="resume-block-lead">
           Review and make any final changes to your resume. Then download or
@@ -234,7 +249,7 @@ const Preview = () => {
               </div>
             </div> */}
 
-            <div className="preview-block-item preview-block-links">
+            {/* <div className="preview-block-item preview-block-links">
               <div className="preview-block-head">
                 <p>Websites, Portfolios, Profiles</p>
               </div>
@@ -247,9 +262,9 @@ const Preview = () => {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
 
-            <div className="preview-block-item preview-block-skill">
+            {/* <div className="preview-block-item preview-block-skill">
               <div className="preview-block-head">
                 <p>Skills</p>
               </div>
@@ -270,9 +285,9 @@ const Preview = () => {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
 
-            <div className="preview-block-item preview-block-contact">
+            {/* <div className="preview-block-item preview-block-contact">
               <div className="preview-block-head">
                 <p>Languages</p>
               </div>
@@ -293,7 +308,7 @@ const Preview = () => {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

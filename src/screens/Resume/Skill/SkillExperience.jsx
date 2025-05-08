@@ -142,9 +142,9 @@ const SkillExperience = () => {
             </ul>
           )}
 
-          <button onClick={handleSubmit} className="btn btn-orange">
+          {/* <button onClick={handleSubmit} className="btn btn-orange">
             Submit
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

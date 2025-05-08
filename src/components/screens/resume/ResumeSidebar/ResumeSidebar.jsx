@@ -55,7 +55,9 @@ const ResumeSidebar = () => {
         <div className="step-item">
           <div
             className={`step-item-count ${
-              location.pathname.startsWith("/resume/preview") ? "active" : ""
+              location.pathname.startsWith("/resume/introvideo/add")
+                ? "active"
+                : ""
             }`}
           >
             04 <p className="step-item-text">Introduction Video</p>
