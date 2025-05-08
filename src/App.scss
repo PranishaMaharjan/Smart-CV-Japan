@@ -13,13 +13,13 @@
   --green: #00856c;
   --maroon: #a51212;
 
-  --primary: #c80002;
+  --primary: #bf1e2e;
   --secondary: #fafafa;
   --white: #fffefc;
-  --text: #616161;
+  --text: #424242;
   --btncolor: #8f8f8f;
   --border: #bdbdbd;
-  --pink: #f8dddd;
+  --pink: #eab4b9;
   --formbox: #eeeeee;
   --btntext: #212121;
   --cv: #ffffff;
@@ -48,7 +48,7 @@
     font-weight: 400;
     line-height: 1.6;
     color: var(--dark);
-    font-family: "Arial, sans-serif";
+    font-family: "Noto Sans";
     // font-family: "Hanken Grotesk", sans-serif;
   }
 
@@ -265,23 +265,13 @@
       font-size: 14px;
       font-weight: 700;
       position: relative;
-
-      &::after {
-        content: "";
-        height: 1px;
-        background-color: var(--dark);
-        position: absolute;
-        left: 0;
-        top: calc(100% - 2px);
-        width: 100%;
-      }
     }
 
     &.link-blue {
-      color: var(--blue);
+      color: var(--primary);
       .link-text {
         &::after {
-          background-color: var(--blue);
+          background-color: var(--primary);
         }
       }
     }

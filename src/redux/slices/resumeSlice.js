@@ -37,6 +37,8 @@ const initialState = storedResumeData
         hobbies: [],
         portfolios: [],
         certifications: [],
+        passportFiles: [],
+        jftn4Files: [],
       },
       loading: {
         educationInfo: false,
@@ -194,6 +196,14 @@ export const resumeSlice = createSlice({
       state.summaryInfo = action.payload;
       saveToLocalStorage(state);
     },
+
+    addOrUpdatePassportFiles: (state, action) => {
+      state.passportFiles = action.payload;
+    },
+
+    addOrUpdateJFTN4Files(state, action) {
+      state.jftn4Files = action.payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -298,5 +308,7 @@ export const {
   addOrUpdateSkillInfo,
   addOrUpdateSummaryInfo,
   addOrUpdateExtraInfo,
+  addOrUpdatePassportFiles,
+  addOrUpdateJFTN4Files,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;

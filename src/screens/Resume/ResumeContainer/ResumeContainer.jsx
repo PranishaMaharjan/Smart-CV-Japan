@@ -5,7 +5,9 @@ import ResumeSidebar from "../../../components/screens/resume/ResumeSidebar/Resu
 const ResumeContainer = () => {
   return (
     <div className="pg-resume-container">
+    
       <ResumeSidebar />
+      
       <div className="resume-wrapper">
         <Outlet />
       </div>

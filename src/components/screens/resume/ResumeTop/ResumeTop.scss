@@ -1,3 +1,13 @@
 .resume-block-top {
   margin-bottom: 16px;
 }
+
+.link-text::before {
+  content: " ";
+  background-image: url("/src/assets/images/arrow-left-double.png");
+  margin-right: 1px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 5px;
+  padding: 0px 11px;
+}

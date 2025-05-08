@@ -60,7 +60,13 @@
     }
 
     .resume-subttl-text {
-      font-size: 14px;
+      font-size: 13px;
+    }
+
+    .form-ctrl-wrap {
+      padding: 4px;
+      display: flex;
+      gap: 20px;
     }
   }
 }

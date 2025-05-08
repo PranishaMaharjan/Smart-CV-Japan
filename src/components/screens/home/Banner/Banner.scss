@@ -76,6 +76,11 @@
 
   .btn:hover {
     background-color: var(--primary);
+
+    .btn-text {
+      transition: 0.3s ease-in-out;
+      color: var(--white);
+    }
   }
 }
 
