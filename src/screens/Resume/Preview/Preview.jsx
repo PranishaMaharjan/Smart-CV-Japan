@@ -12,6 +12,10 @@ import { useNavigate } from "react-router-dom";
 
 const Preview = () => {
   const resume = useSelector(selectResume);
+  const passportFiles = resume?.passportFiles || [];
+  const jftn4Files = useSelector(
+    (state) => state.resume.extraInfo.jftn4Files || []
+  );
   console.log(resume);
 
   const handleSubmit = (e) => {
@@ -200,115 +204,76 @@ const Preview = () => {
               </tbody>
             </table>
 
-            {/* <div className="preview-intro-img">
-              <img src={Images.Avatar} alt="" />
+            <div className="passport-preview">
+              {passportFiles.map((file, index) => {
+                const url = URL.createObjectURL(file);
+
+                if (file.type.includes("image")) {
+                  return (
+                    <img
+                      key={index}
+                      src={url}
+                      alt={`Passport ${index}`}
+                      width={150}
+                    />
+                  );
+                } else if (file.type === "application/pdf") {
+                  return (
+                    <embed
+                      key={index}
+                      src={url}
+                      type="application/pdf"
+                      width="100%"
+                      height="400px"
+                    />
+                  );
+                } else {
+                  return <p key={index}>{file.name}</p>;
+                }
+              })}
             </div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <h3 className="preview-intro-name">
-                      <span>{resume?.contactInfo?.firstName}</span>
-                      <span>{resume?.contactInfo?.surName}</span>
-                    </h3>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
 
-            <p className="preview-intro-prof">
-              {resume?.contactInfo?.profession}
-            </p>
-          </div>
-          <div className="preview-block-group">
-            <div className="preview-block-item preview-block-contact">
-              <div className="preview-block-head">
-                <p>Contact</p>
-              </div>
-              <div className="preview-block-list">
-                <div className="preview-list-item">
-                  <span className="list-item-lbl">Address</span>
-                  <span className="list-item-val">
-                    {resume?.contactInfo?.cityOrMunicipality},{" "}
-                    {resume?.contactInfo?.country},{" "}
-                    {resume?.contactInfo?.postalCode}
-                  </span>
-                </div>
-                <div className="preview-list-item">
-                  <span className="list-item-lbl">Phone</span>
-                  <span className="list-item-val">
-                    {resume?.contactInfo?.phone}
-                  </span>
-                </div>
-                <div className="preview-list-item">
-                  <span className="list-item-lbl">E-mail</span>
-                  <span className="list-item-val">
-                    {resume?.contactInfo?.email}
-                  </span>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <div className="preview-block-item preview-block-links">
-              <div className="preview-block-head">
-                <p>Websites, Portfolios, Profiles</p>
-              </div>
-              <div className="preview-block-list">
-                {resume?.extraInfo?.portfolios?.map((portfolio) => {
-                  return (
-                    <div key={portfolio.id} className="preview-list-item">
-                      <span className="list-item-val">{portfolio.name}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div> */}
-
-            {/* <div className="preview-block-item preview-block-skill">
-              <div className="preview-block-head">
-                <p>Skills</p>
-              </div>
-              <div className="preview-block-list">
-                {resume?.skillInfo?.map((skill) => {
-                  return (
-                    <div className="preview-list-item" key={skill.id}>
-                      <span className="list-item-val">{skill.name}</span>
-                      <div className="list-item-rate">
-                        <span
-                          className="list-item-rate-val"
-                          style={{
-                            width: `${(skill.rating / 5) * 100}%`,
-                          }}
-                        ></span>
+            <div className="jftnf4-preview">
+              {jftn4Files && jftn4Files.length > 0 ? (
+                <ul className="file-preview-list">
+                  {jftn4Files.map((file, index) => (
+                    <li key={index} className="file-preview-item">
+                      <div>
+                        <strong>{file.name}</strong> –{" "}
+                        {(file.size / 1024 / 1024).toFixed(2)} MB
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div> */}
 
-            {/* <div className="preview-block-item preview-block-contact">
-              <div className="preview-block-head">
-                <p>Languages</p>
-              </div>
-              <div className="preview-block-list">
-                {resume?.extraInfo?.languages?.map((language) => {
-                  return (
-                    <div className="preview-list-item" key={language.id}>
-                      <span className="list-item-val">{language.name}</span>
-                      <div className="list-item-rate">
-                        <span
-                          className="list-item-rate-val"
-                          style={{
-                            width: `${(language.rating / 5) * 100}%`,
-                          }}
-                        ></span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div> */}
+                      {/* Display preview if image or PDF */}
+                      {file.type.startsWith("image/") && (
+                        <img
+                          src={URL.createObjectURL(file)}
+                          alt="preview"
+                          className="file-preview-image"
+                        />
+                      )}
+
+                      {file.type === "application/pdf" && (
+                        <iframe
+                          src={URL.createObjectURL(file)}
+                          title={`preview-${index}`}
+                          className="file-preview-pdf"
+                        ></iframe>
+                      )}
+
+                      <a
+                        href={URL.createObjectURL(file)}
+                        download={file.name}
+                        className="file-download-link"
+                      >
+                        Download
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No JFT/N4 certificates uploaded.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>

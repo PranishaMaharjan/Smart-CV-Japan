@@ -67,8 +67,10 @@ const Contact = () => {
 
         return (
           <Form>
-            <div className="resume-board-block resume-block-contact">
+            <div className="dashboard">
               <ResumeTop goBackRoute={routeConstants.RESUME_SELECTCVTYPE} />
+            </div>
+            <div className="resume-board-block resume-block-contact">
               <div className="resume-block-content">
                 <div className="resume-block-ttl">
                   <h2 className="">Untitled Cv Draft</h2>

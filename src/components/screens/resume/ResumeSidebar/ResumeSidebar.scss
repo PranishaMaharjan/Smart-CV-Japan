@@ -78,3 +78,23 @@
     letter-spacing: 0.5px;
   }
 }
+
+.resume-sidebar {
+  display: grid;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+
+  img {
+    min-width: 40px;
+    height: auto;
+    margin-left: 60px;
+
+    @media (max-width: 992px) {
+      max-width: 36px;
+    }
+  }
+}

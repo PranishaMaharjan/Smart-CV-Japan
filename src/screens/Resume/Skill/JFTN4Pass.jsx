@@ -14,16 +14,23 @@ import { useDropzone } from "react-dropzone";
 import ResumeTop from "../../../components/screens/resume/ResumeTop/ResumeTop";
 import routeConstants from "../../../constants/routeConstants";
 import "./PassportUpload.scss";
+import { useDispatch } from "react-redux";
+import { addOrUpdateJFTN4Files } from "../../../redux/slices/resumeSlice";
 
 const JFTN4Pass = () => {
-  const [passportFiles, setPassportFiles] = useState([]);
+  const dispatch = useDispatch();
+  const [jftn4Files, setJftn4Files] = useState([]);
 
   const maxFiles = 10;
   const maxSize = 5 * 1024 * 1024; // 5MB
 
   const onDrop = (acceptedFiles, fileRejections) => {
-    const newFiles = [...passportFiles, ...acceptedFiles].slice(0, maxFiles);
-    setPassportFiles(newFiles);
+    console.log("files", acceptedFiles);
+    console.log("files", fileRejections);
+    // const newFiles = [...passportFiles, ...acceptedFiles].slice(0, maxFiles);
+    const newFiles = [...jftn4Files, ...acceptedFiles].slice(0, maxFiles);
+    setJftn4Files(newFiles);
+    // dispatch(addOrUpdateJFTN4Files(newFiles));
 
     if (fileRejections.length > 0) {
       fileRejections.forEach(({ file, errors }) => {
@@ -51,47 +58,8 @@ const JFTN4Pass = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Passport files:", passportFiles);
-    // You can send files to backend here using FormData
+    console.log("Passport files:", jftn4Files);
   };
-
-  // useResumeCompletionGuard();
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  // const skills = useSelector(selectSkillInfo);
-  // const [skillError, setSkillError] = useState(null);
-
-  // const initialValues = {
-  //   skills: skills.length ? skills : [{ id: uuidv4(), name: "", rating: 0 }],
-  // };
-
-  // const addSkillItem = (arrayHelpers, values) => {
-  //   const id = uuidv4();
-  //   const isEmptySkill = values.skills.some((skill) => !skill.name.trim());
-  //   if (isEmptySkill) {
-  //     setSkillError("Please fill existing field before adding another.");
-  //   } else {
-  //     setSkillError(null);
-  //     arrayHelpers.push({
-  //       id: id,
-  //       name: "",
-  //       rating: 0,
-  //     });
-  //   }
-  // };
-
-  // const addOrUpdateData = (values) => {
-  //   dispatch(addOrUpdateSkillInfo(values.skills));
-  //   navigate(routeConstants.RESUME_SUMMARY_TIPS);
-  // };
-
-  // useEffect(() => {
-  //   const timeoutId = setTimeout(() => {
-  //     setSkillError(null);
-  //   }, 2000);
-
-  //   return () => clearTimeout(timeoutId);
-  // }, [skillError]);
 
   return (
     <div className="resume-board-block resume-block-skill">
@@ -132,118 +100,18 @@ const JFTN4Pass = () => {
             <p>Size limit: 5MB per file, can upload up to 10 files</p>
           </div>
 
-          {passportFiles.length > 0 && (
+          {jftn4Files.length > 0 && (
             <ul className="file-list">
-              {passportFiles.map((file, idx) => (
+              {jftn4Files.map((file, idx) => (
                 <li key={idx}>
                   {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
                 </li>
               ))}
             </ul>
           )}
-
-          {/* <button onClick={handleSubmit} className="btn btn-orange">
-            Submit
-          </button> */}
         </div>
       </div>
     </div>
-    // <Formik initialValues={initialValues} onSubmit={addOrUpdateData}>
-    //   {({ values }) => (
-    //     <Form>
-    //       <div className="resume-board-block resume-block-skill">
-    //         <div className="resume-block-content">
-    //           <h2 className="resume-block-ttl">
-    //             What skills would you like to highlight?
-    //           </h2>
-    //           <p className="resume-block-lead">
-    //             Write your skills with rating along with it.
-    //           </p>
-    //           <FieldArray name="skills">
-    //             {(arrayHelpers) => (
-    //               <>
-    //                 <div className="resume-row">
-    //                   <div className="form-elems-wrap">
-    //                     {values.skills.map((skill, index) => (
-    //                       <div className="form-elem" key={index}>
-    //                         <div className="form-rating">
-    //                           <button
-    //                             type="button"
-    //                             onClick={() =>
-    //                               arrayHelpers.replace(index, {
-    //                                 ...skill,
-    //                                 rating: 0,
-    //                               })
-    //                             }
-    //                             className="skill-rating-btn"
-    //                           >
-    //                             <FaMinusCircle size={20} />
-    //                           </button>
-    //                           <div className="rating-stars">
-    //                             {Array.from({ length: 5 }).map((_, i) => (
-    //                               <button
-    //                                 type="button"
-    //                                 key={i}
-    //                                 className="star-btn"
-    //                                 onClick={() =>
-    //                                   arrayHelpers.replace(index, {
-    //                                     ...skill,
-    //                                     rating: i + 1,
-    //                                   })
-    //                                 }
-    //                               >
-    //                                 {i + 1 <= skill.rating ? (
-    //                                   <FaStar size={20} />
-    //                                 ) : (
-    //                                   <FaRegStar size={20} />
-    //                                 )}
-    //                               </button>
-    //                             ))}
-    //                           </div>
-    //                         </div>
-    //                         <div className="form-ctrl-wrap">
-    //                           <Field
-    //                             type="text"
-    //                             name={`skills.${index}.name`}
-    //                             className="form-ctrl"
-    //                             placeholder="Skill Name"
-    //                           />
-    //                         </div>
-    //                         <button
-    //                           type="button"
-    //                           onClick={() => arrayHelpers.remove(index)}
-    //                           className="skill-delete-btn"
-    //                         >
-    //                           <FaTrash size={20} />
-    //                         </button>
-    //                       </div>
-    //                     ))}
-    //                     {skillError && (
-    //                       <div className="error-message">{skillError}</div>
-    //                     )}
-    //                   </div>
-    //                 </div>
-
-    //                 <div className="summary-add">
-    //                   <button
-    //                     type="button"
-    //                     className="summary-add-btn"
-    //                     onClick={() => addSkillItem(arrayHelpers, values)}
-    //                   >
-    //                     <span className="btn-icon">
-    //                       <FaPlus />
-    //                     </span>
-    //                     <span className="btn-text">Add Skill</span>
-    //                   </button>
-    //                 </div>
-    //               </>
-    //             )}
-    //           </FieldArray>
-    //         </div>
-    //       </div>
-    //     </Form>
-    //   )}
-    // </Formik>
   );
 };
 

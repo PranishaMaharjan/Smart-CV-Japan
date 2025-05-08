@@ -9,11 +9,10 @@ const ResumeSidebar = () => {
 
   return (
     <div className="resume-sidebar">
-      <div className="sidebar-brand">
-        <Link to="/" className="site-brand">
-          <img src="src/assets/images/LogoJapan.png" alt="" />
-        </Link>
-      </div>
+      <Link to="/" className="site-brand">
+        <img src="src/assets/images/LogoJapan.png" alt="" />
+        <span>Pranisha</span>
+      </Link>
 
       <div className="sidebar-steps">
         <div className="step-item">
