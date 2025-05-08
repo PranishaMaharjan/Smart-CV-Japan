@@ -212,6 +212,12 @@ export const resumeSlice = createSlice({
     addOrUpdateJFTN4Files(state, action) {
       state.jftn4Files = action.payload;
     },
+    addOrUpdateEducationFiles(state, action) {
+      state.educationFiles = action.payload;
+    },
+    addOrUpdateSkillFiles(state, action) {
+      state.skillFiles = action.payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -342,5 +348,7 @@ export const {
   addOrUpdateExtraInfo,
   addOrUpdatePassportFiles,
   addOrUpdateJFTN4Files,
+  addOrUpdateEducationFiles,
+  addOrUpdateSkillFiles,
 } = resumeSlice.actions;
 export default resumeSlice.reducer;

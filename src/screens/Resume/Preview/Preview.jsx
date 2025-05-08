@@ -592,6 +592,8 @@ const Preview = () => {
   const previewRef = useRef(null);
 
   const passportFiles = resume?.passportFiles || [];
+  const educationFiles = resume?.educationFiles || [];
+  const skillFiles = resume?.skillFiles || [];
   const jftn4Files = resume?.jftn4Files || [];
 
   const handleSubmit = (e) => {
@@ -860,6 +862,64 @@ const Preview = () => {
                 ) : (
                   <p>No JFT/N4 certificates uploaded.</p>
                 )}
+              </div>
+
+              {/* education Preview */}
+              <div className="passport-preview">
+                {educationFiles.map((file, index) => {
+                  const url = URL.createObjectURL(file);
+                  if (file.type.includes("image")) {
+                    return (
+                      <img
+                        key={index}
+                        src={url}
+                        alt={`Education ${index}`}
+                        width={150}
+                      />
+                    );
+                  } else if (file.type === "application/pdf") {
+                    return (
+                      <embed
+                        key={index}
+                        src={url}
+                        type="application/pdf"
+                        width="100%"
+                        height="400px"
+                      />
+                    );
+                  } else {
+                    return <p key={index}>{file.name}</p>;
+                  }
+                })}
+              </div>
+
+              {/* Skill Preview */}
+              <div className="passport-preview">
+                {skillFiles.map((file, index) => {
+                  const url = URL.createObjectURL(file);
+                  if (file.type.includes("image")) {
+                    return (
+                      <img
+                        key={index}
+                        src={url}
+                        alt={`Education ${index}`}
+                        width={150}
+                      />
+                    );
+                  } else if (file.type === "application/pdf") {
+                    return (
+                      <embed
+                        key={index}
+                        src={url}
+                        type="application/pdf"
+                        width="100%"
+                        height="400px"
+                      />
+                    );
+                  } else {
+                    return <p key={index}>{file.name}</p>;
+                  }
+                })}
               </div>
             </div>
           </div>
