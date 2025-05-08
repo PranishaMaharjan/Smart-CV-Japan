@@ -61,13 +61,12 @@ const AppRoutes = () => {
           element={<IntroVideo />}
         />
 
-        <Route path={routeConstants.RESUME_PREVIEW} element={<Preview />} />
         <Route
           path={routeConstants.RESUME_CVTEMPLATE}
           element={<CvTemplate />}
         />
       </Route>
-
+      <Route path={routeConstants.RESUME_PREVIEW} element={<Preview />} />
       <Route path={routeConstants.PAGE_NOT_FOUND} element={<PageNotFound />} />
     </Routes>
   );
