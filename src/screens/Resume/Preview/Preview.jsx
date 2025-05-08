@@ -13,9 +13,9 @@ import { useNavigate } from "react-router-dom";
 const Preview = () => {
   const resume = useSelector(selectResume);
   const passportFiles = resume?.passportFiles || [];
-  const jftn4Files = useSelector(
-    (state) => state.resume.extraInfo.jftn4Files || []
-  );
+  const jftn4Files = resume.jftn4Files || [];
+
+  console.log("jftn4Files", jftn4Files);
   console.log(resume);
 
   const handleSubmit = (e) => {
