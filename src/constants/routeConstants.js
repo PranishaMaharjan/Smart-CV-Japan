@@ -12,7 +12,7 @@ const routeConstants = {
   RESUME_CERTIFICATIONS: "/resume/certifications/add",
   RESUME_INTROVIDEO: "/resume/introvideo/add",
   RESUME_PREVIEW: "/resume/preview",
-  // RESUME_CVTEMPLATE: "/resume/cvtemplate",
+  RESUME_CVTEMPLATE: "/resume/cvtemplate",
   PAGE_NOT_FOUND: "/*",
 };
 

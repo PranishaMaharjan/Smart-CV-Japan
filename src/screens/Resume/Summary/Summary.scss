@@ -1,6 +1,15 @@
 .resume-block-summary {
+  .resume-block-lead {
+    background-color: var(--white);
+    padding-left: 24px;
+    padding-left: 24px;
+    // border-bottom:1px solid black ;
+  }
   .resume-row {
-    padding-bottom: 0px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--white);
     .form-elem {
       .form-lbl {
         margin-bottom: 0px;

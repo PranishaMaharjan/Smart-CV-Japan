@@ -1,4 +1,8 @@
 .resume-block-skill {
+  .resume-block-content {
+    padding: 20px 24px 0px 24px;
+    // border-radius: 8px;
+  }
   .form-elems-wrap {
     position: relative;
     max-width: 720px;
@@ -81,4 +85,13 @@
     font-size: 14px;
     font-weight: 700;
   }
+}
+
+.resume-block-container {
+  border-radius: 8px;
+}
+
+.resume-block-bottom {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }

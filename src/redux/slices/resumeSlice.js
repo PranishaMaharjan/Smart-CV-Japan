@@ -21,6 +21,14 @@ const initialState = storedResumeData
         postalCode: "",
         phone: "",
         email: "",
+        dob: "",
+        nationality: "",
+        gender: "",
+        height: "",
+        weight: "",
+        bloodGroup: "",
+        martialStatus: "",
+        tattoo: "",
       },
       educationInfo: [],
       workhistoryInfo: [],
@@ -232,6 +240,14 @@ export const resumeSlice = createSlice({
             postalCode,
             phone,
             email,
+            dob,
+            nationality,
+            gender,
+            height,
+            weight,
+            bloodGroup,
+            martialStatus,
+            tattoo,
           } = action.payload;
 
           // Update the contactInfo state with the payload data or keep the previous state for missing properties
@@ -246,6 +262,14 @@ export const resumeSlice = createSlice({
             postalCode: postalCode || state.contactInfo.postalCode,
             phone: phone || state.contactInfo.phone,
             email: email || state.contactInfo.email,
+            dob: dob || state.contactInfo.dob,
+            nationality: nationality || state.contactInfo.nationality,
+            gender: gender || state.contactInfo.gender,
+            height: height || state.contactInfo.height,
+            weight: weight || state.contactInfo.weight,
+            bloodGroup: bloodGroup || state.contactInfo.bloodGroup,
+            martialStatus: martialStatus || state.contactInfo.martialStatus,
+            tattoo: tattoo || state.contactInfo.tattoo,
           };
         } else {
           // Log an error if the payload is invalid
@@ -262,6 +286,14 @@ export const resumeSlice = createSlice({
             postalCode: "",
             phone: "",
             email: "",
+            dob: "",
+            nationality: "",
+            gender: "",
+            height: "",
+            weight: "",
+            bloodGroup: "",
+            martialStatus: "",
+            tattoo: "",
           };
         }
       })

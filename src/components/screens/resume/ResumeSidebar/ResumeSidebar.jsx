@@ -10,7 +10,7 @@ const ResumeSidebar = () => {
   return (
     <div className="resume-sidebar">
       <Link to="/" className="site-brand">
-        <img src="/LogoJapan.png" alt="" />
+        <img src="/SmartCVLogo.png" alt="" />
       </Link>
 
       <div className="sidebar-steps">

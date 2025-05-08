@@ -22,7 +22,7 @@ const EducationList = () => {
     <div className="resume-board-block resume-block-education">
       <div className="resume-block-content">
         <div className="resume-summary">
-          <div className="resume-block-container">
+          {/* <div className="resume-block-container"> */}
             {/* <h3 className="summary-list-ttl">Education Summary</h3> */}
             <div className="summary-list">
               {educationInfoData?.map((educationItem, index) => {
@@ -73,7 +73,7 @@ const EducationList = () => {
                 <span className="btn-text">Add another education</span>
               </Link>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
       {/* <div className="resume-block-bottom">

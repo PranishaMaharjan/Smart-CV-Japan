@@ -45,6 +45,7 @@ const SummaryItem = ({ initialSummary, addData, formikRef }) => {
             <div className="resume-block-content">
               <h2 className="resume-block-ttl"></h2>
               <p className="resume-block-lead">Other Key Informations</p>
+              <hr/>
               <div className="resume-row">
                 <div className="resume-form">
                   <div className="form-elem">
@@ -203,6 +204,7 @@ const SummaryAdd = () => {
     try {
       await dispatch(submitContactInfo(contactInfo)).unwrap();
       await dispatch(submitEducationInfo(educationInfo)).unwrap();
+      // navigate("/resume/certifications/add");
       await dispatch(submitWorkHistoryInfo(workHistoryInfoData)).unwrap();
     } catch (err) {
       console.error("Error submitting form:", err);
@@ -231,7 +233,7 @@ const SummaryAdd = () => {
           <span className="btn-text">Back</span>
         </Link>
         <button
-          disabled={isSubmitting}
+          // disabled={isSubmitting}
           onClick={handleSubmitAndNext}
           className="resume-next-btn btn btn-next border-effect"
         >
@@ -239,7 +241,7 @@ const SummaryAdd = () => {
             {isSubmitting ? "Submitting..." : "Next"}
           </span>
         </button>
-        {error && <p>{error}</p>}
+        {/* {error && <p>{error}</p>} */}
         {success && <p>Success!</p>}
       </div>
     </div>

@@ -3,8 +3,9 @@ import { useDropzone } from "react-dropzone";
 import routeConstants from "../../../constants/routeConstants";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import ResumeTop from "../../../components/screens/resume/ResumeTop/ResumeTop";
 
-// import "./PassportUpload.scss";
+import "./IntroVideo.scss";
 
 const IntroVideo = () => {
   const navigate = useNavigate();
@@ -48,7 +49,15 @@ const IntroVideo = () => {
 
   return (
     <div className="resume-board-block resume-block-skill">
+      <div className="dashboard">
+        <ResumeTop goBackRoute={routeConstants.RESUME_SELECTCVTYPE} />
+      </div>
+      <hr />
       <div className="resume-block-content">
+        <div className="resume-block-ttl">
+          <h2 className="">Untitled Cv Draft</h2>
+          <img src="../../src/assets/icons/pencil-edit-02.png" />
+        </div>
         <div className="resume-block-container">
           <p className="resume-block-lead">JFT/N4 Pass certificate</p>
           <hr />
@@ -96,9 +105,10 @@ const IntroVideo = () => {
               ))}
             </ul>
           )}
-
-          <button onClick={handleSubmit} className="btn btn-orange">
-            Submit
+        </div>
+        <div className="btn-save">
+          <button onClick={handleSubmit} className="btn-savecv">
+            Save CV
           </button>
         </div>
       </div>
