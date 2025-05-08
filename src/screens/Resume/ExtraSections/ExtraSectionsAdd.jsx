@@ -74,7 +74,7 @@ const ExtraSectionsAdd = () => {
     });
     console.log(extraInfoData);
     dispatch(addOrUpdateExtraInfo(extraInfoData));
-    navigate(routeConstants.RESUME_PREVIEW);
+    navigate(routeConstants.RESUME_INTROVIDEO);
   };
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const ExtraSectionsAdd = () => {
     <Formik initialValues={initialValues} onSubmit={addOrUpdateData}>
       {({ values }) => (
         <Form>
-          <div className="resume-board-block resume-block-extra">
+          {/* <div className="resume-board-block resume-block-extra">
             <div className="resume-block-content">
               <h2 className="resume-block-ttl">
                 Do you have anything else to add?
@@ -359,25 +359,25 @@ const ExtraSectionsAdd = () => {
                   </FieldArray>
                 </div>
               </div>
-            </div>
-            <div className="resume-block-bottom">
-              <button>
-                <Link
-                  to="/resume/personaldetails/add"
-                  className="resume-preview-btn btn btn-back btn-outline border-effect"
-                >
-                  <span className="btn-text">Back</span>
-                </Link>
-              </button>
-
-              <button
-                type="submit"
-                className="resume-next-btn btn btn-next border-effect"
+            </div> */}
+          <div className="resume-block-bottom">
+            <button>
+              <Link
+                to="/resume/personaldetails/add"
+                className="resume-preview-btn btn btn-back btn-outline border-effect"
               >
-                <span className="btn-text">Next</span>
-              </button>
-            </div>
+                <span className="btn-text">Back</span>
+              </Link>
+            </button>
+
+            <button
+              type="submit"
+              className="resume-next-btn btn btn-next border-effect"
+            >
+              <span className="btn-text">Next</span>
+            </button>
           </div>
+          {/* </div> */}
         </Form>
       )}
     </Formik>

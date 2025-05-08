@@ -9,6 +9,7 @@ import ResumeContainer from "../screens/Resume/ResumeContainer/ResumeContainer";
 import SelectCvType from "../screens/Resume/SelectCvType/SelectCvType";
 import PersonalDetails from "../screens/Resume/PersonalDetails/PersonalDetails";
 import Certifications from "../screens/Resume/Certifications/Certifications";
+import IntroVideo from "../screens/Resume/IntroVideo/IntroVideo";
 // import EducationTips from "../screens/Resume/sEducation/EducationTips";
 // import EducationList from "../screens/Resume/Education/EducationList";
 // import EducationAdd from "../screens/Resume/Education/EducationAdd";
@@ -24,6 +25,7 @@ import SelectScreen from "../screens/Select/SelectScreen";
 // import SummaryAdd from "../screens/Resume/Summary/SummaryAdd";
 // import ExtraSectionsAdd from "../screens/Resume/ExtraSections/ExtraSectionsAdd";
 import Preview from "../screens/Resume/Preview/Preview";
+// import { CvTemplate } from "../screens/CvTemplate/CvTemplate";
 import Login from "../components/auth/Login/Login";
 import Register from "../components/auth/Register/Register";
 
@@ -53,30 +55,55 @@ const AppRoutes = () => {
           element={<Certifications />}
         />
 
+        <Route
+          path={routeConstants.RESUME_INTROVIDEO}
+          element={<IntroVideo />}
+        />
+
         <Route path={routeConstants.RESUME_PREVIEW} element={<Preview />} />
+        {/* <Route
+          path={routeConstants.RESUME_CVTEMPLATE}
+          element={<CvTemplate />}
+        /> */}
       </Route>
 
-      {/* <Route
+      <Route path={routeConstants.PAGE_NOT_FOUND} element={<PageNotFound />} />
+    </Routes>
+  );
+};
+
+export default AppRoutes;
+
+{
+  /* <Route
           path={routeConstants.RESUME_SKILL_TIPS}
           element={<SkillTips />}
-        /> */}
-      {/* <Route path={routeConstants.RESUME_SKILL_ADD} eleme
+        /> */
+}
+{
+  /* <Route path={routeConstants.RESUME_SKILL_ADD} eleme
 
-        nt={<SkillAdd />} /> */}
-      {/* <Route
+        nt={<SkillAdd />} /> */
+}
+{
+  /* <Route
           path={routeConstants.RESUME_SUMMARY_TIPS}
           element={<SummaryTips />}
-        /> */}
-      {/* <Route
+        /> */
+}
+{
+  /* <Route
           path={routeConstants.RESUME_SUMMARY_ADD}
           element={<SummaryAdd />}
         />
         <Route
           path={routeConstants.RESUME_EXTRA_ADD}
           element={<ExtraSectionsAdd />}
-        /> */}
+        /> */
+}
 
-      {/* <Route
+{
+  /* <Route
           path={routeConstants.RESUME_EDUCATION_TIPS}
           element={<EducationTips />}
         />
@@ -107,13 +134,9 @@ const AppRoutes = () => {
         <Route
           path={`${routeConstants.RESUME_WORKHISTORY_EDIT}/:id`}
           element={<WorkHistoryEdit />}
-        /> */}
+        /> */
+}
 
-      {/* </Route> */}
-
-      <Route path={routeConstants.PAGE_NOT_FOUND} element={<PageNotFound />} />
-    </Routes>
-  );
-};
-
-export default AppRoutes;
+{
+  /* </Route> */
+}

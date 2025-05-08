@@ -15,8 +15,8 @@ const Certifications = () => {
       <EducationalCertification />
       <SkillExperience />
       {/* <SummaryTips />
-      <SummaryAdd />
-      <ExtraSectionsAdd /> */}
+      <SummaryAdd /> */}
+      <ExtraSectionsAdd />
     </div>
   );
 };
